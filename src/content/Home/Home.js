@@ -1,9 +1,13 @@
 import React from 'react';
+import { CarouselData } from './Carousel/CarouselData';
+import {Carousel, Lines1} from "./_index";
 
 const Home = () => {
+
   return (
     <div className='home-main'>
-      <h1>Home</h1>
+      <Carousel slides={CarouselData} />
+      <Lines1/>
     </div>
   )
 }; 

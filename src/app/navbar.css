@@ -3,7 +3,11 @@
   height: 70px;
   font-size: 20px;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%; }
   .navbar-main .logo-div {
     text-align: center;
     display: flex;

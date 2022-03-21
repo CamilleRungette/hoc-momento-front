@@ -1,0 +1,31 @@
+.carousel-main {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .carousel-main .carousel-item {
+    width: 100%;
+    border-radius: 10px; }
+  .carousel-main .right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 2rem;
+    color: white;
+    z-index: 10;
+    user-select: none; }
+  .carousel-main .left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    font-size: 2rem;
+    color: white;
+    z-index: 10;
+    user-select: none; }
+  .carousel-main .slide {
+    opacity: 0; }
+  .carousel-main .slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1); }
