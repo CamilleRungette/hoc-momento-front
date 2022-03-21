@@ -1,6 +1,6 @@
 import React from 'react';
 import { CarouselData } from './Carousel/CarouselData';
-import {Carousel, Lines1, Lines2, Lines3} from "./_index";
+import {Carousel, Lines1, Lines2, HomeFooter} from "./_index";
 
 const Home = () => {
 
@@ -21,6 +21,8 @@ const Home = () => {
       <div className='home-lines2'>
         <Lines2/>
       </div>
+
+      <HomeFooter/>
     </div>
   )
 }; 

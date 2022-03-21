@@ -1,0 +1,40 @@
+.home-footer-main{
+  background-color: #f5f5f5;
+  width: 100%;
+  padding: 3% 6% 3% 6%;
+  margin-top: 5%;
+
+  .links{
+    display: flex;
+    div{
+      width: 33%;
+    }
+  }
+
+  .footer-list{
+    li{
+      margin-bottom: 1rem;
+    }
+  };
+
+  .network-icon{
+    font-size: 22px;
+    vertical-align: middle;
+    margin-top: -8px;
+    margin-right: 10px;
+  };
+
+  .instagram{
+    font-size: 24px !important;
+    margin-left: -1px !important;
+  };
+
+  .contact-form{
+    width: 70%;
+
+    .contact-input{
+      width: 1000px;
+      margin-bottom: 10px;
+    }
+  };
+}
