@@ -1,0 +1,32 @@
+@import "../commons/colors.scss";
+
+
+.home-main{
+  position: absolute;
+  .carousel-div{
+    height: 110vh;
+  };
+
+  .home-lines1{
+    width: 60%;
+    margin-left: 10%;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+  };
+
+  .quote{
+    text-align: center;
+
+    p{
+      font-size: 26px;
+      color: $primary
+    }
+  };
+
+  .home-lines2{
+    width: 40%;
+    margin-top: 3rem;;
+    position: absolute;
+    right: 10%;
+  };
+};
