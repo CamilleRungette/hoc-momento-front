@@ -1,12 +1,18 @@
 .home-footer-main {
   background-color: #f5f5f5;
-  width: 100%;
-  padding: 3% 6% 3% 6%;
-  margin-top: 5%; }
+  padding: 3% 6% 2% 6%;
+  margin-top: 5%;
+  position: relative; }
   .home-footer-main .links {
-    display: flex; }
-    .home-footer-main .links div {
-      width: 33%; }
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem; }
+    .home-footer-main .links .link-part {
+      width: 33%;
+      text-align: center; }
+      .home-footer-main .links .link-part .inside {
+        display: inline-block;
+        text-align: left; }
   .home-footer-main .footer-list li {
     margin-bottom: 1rem; }
   .home-footer-main .network-icon {
@@ -18,7 +24,23 @@
     font-size: 24px !important;
     margin-left: -1px !important; }
   .home-footer-main .contact-form {
-    width: 70%; }
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto; }
     .home-footer-main .contact-form .contact-input {
-      width: 1000px;
       margin-bottom: 10px; }
+  .home-footer-main .supports-partners {
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    display: flex;
+    justify-content: space-around; }
+    .home-footer-main .supports-partners .footer-logo {
+      max-width: 100px;
+      padding-top: 3rem;
+      padding-bottom: 2rem; }
+      .home-footer-main .supports-partners .footer-logo img {
+        width: 100%; }
+  .home-footer-main .end-paragraph {
+    text-align: end;
+    margin-top: 2rem; }

@@ -19,16 +19,19 @@ const HomeFooter = () => {
   return (
     <div className='home-footer-main'>
       <div className='links'>
-        <div className='credits'>
-          <h2>Crédits Photos</h2>
-          <ul className='footer-list no-list-style '>
-            <li>Marie Doreaux</li>
-            <li>Yvan Loiseau</li>
-            <li>Piero Oronzo</li>
-            <li>Ariane Descoueyte</li>
-          </ul>
+        <div className='credits link-part'>
+          <div className='inside'>
+            <h2>Crédits Photos</h2>
+            <ul className='footer-list no-list-style '>
+              <li>Marie Doreaux</li>
+              <li>Yvan Loiseau</li>
+              <li>Piero Oronzo</li>
+              <li>Ariane Descoueyte</li>
+            </ul>
+          </div>
         </div>
-        <div className='social-networks'>
+        <div className='social-networks link-part'>
+          <div className='inside'>
           <h2> Réseaux sociaux</h2>
           <ul className='footer-list no-list-style'>
             <li> <AiFillFacebook className='network-icon' color='#555555'/> <a>Facebook</a> </li>
@@ -36,8 +39,9 @@ const HomeFooter = () => {
             <li> <AiFillYoutube className='network-icon' color="#555555" /> <a>Youtube</a> </li>
             <li> <AiOutlineMail className='network-icon' color='#555555' /> <a>contact@gmail.com</a> </li>
           </ul>
+          </div>
         </div>
-        <div className='contact'>
+        <div className='contact link-part'>
           <h2> Contactez-nous</h2>
           <ThemeProvider theme={theme}>
             <Box
@@ -68,8 +72,29 @@ const HomeFooter = () => {
         </div>
       </div>
 
-      <div className='supports-partners'>
+      <div className='supports-partners '>
+        <div className='footer-logo'>
+          <img src='/images/logos/logo_drac.png' />
+        </div>
+        <div className='footer-logo'>
+          <img src='/images/logos/logo_saint_denis.png' />
+        </div>
+        <div className='footer-logo'>
+          <img src='/images/logos/logo_saint_ouen.png' />
+        </div>
+        <div className='footer-logo'>
+          <img src='/images/logos/logo_adami.png' />
+        </div>
+        <div className='footer-logo'>
+          <img src='/images/logos/logo_condorcet.png' />
+        </div>
+        <div className='footer-logo'>
+          <img src='/images/logos/logo_mains_doeuvres.png' />
+        </div>
+      </div>
 
+      <div className='end-paragraph'>
+        <p>Hoc Momento - 2022</p>
       </div>
     </div>
   )
