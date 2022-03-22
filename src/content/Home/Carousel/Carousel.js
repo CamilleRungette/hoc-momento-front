@@ -6,9 +6,6 @@ const Carousel = ({slides}) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
-  setInterval(() => {
-    nextSlide()
-  }, 8000)
 
   if (!Array.isArray(slides) || slides.length <=0 ){
     return null
