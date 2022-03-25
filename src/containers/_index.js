@@ -7,3 +7,4 @@ export {default as PartnersSupports} from "../content/PartnersSupports/PartnersS
 export {default as Shows} from "../content/Shows/Shows";
 export {default as NavbarHome} from "../content/Navbar/NavbarHome";
 export {default as Navbar} from "../content/Navbar/Navbar";
+export {default as Footer} from "../content/Footer/Footer";

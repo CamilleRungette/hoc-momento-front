@@ -2,7 +2,6 @@ import React from 'react';
 import {AiFillFacebook, AiOutlineInstagram, AiFillYoutube, AiOutlineMail} from "react-icons/ai";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const HomeFooter = () => {
@@ -33,7 +32,7 @@ const HomeFooter = () => {
         <div className='social-networks link-part'>
           <div className='inside'>
           <h2> Réseaux sociaux</h2>
-          <ul className='footer-list no-list-style'>
+          <ul className='footer-home-list no-list-style'>
             <li> <AiFillFacebook className='network-icon' color='#555555'/> <a>Facebook</a> </li>
             <li> <AiOutlineInstagram className='network-icon instagram' color="#555555" /> <a>Instagram</a> </li>
             <li> <AiFillYoutube className='network-icon' color="#555555" /> <a>Youtube</a> </li>

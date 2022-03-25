@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Company, Shows, Home, CulturalActions, Agenda, PartnersSupports, Contact, Navbar, NavbarHome} from "./_index.js";
+import {Company, Shows, Home, CulturalActions, Agenda, PartnersSupports, Contact, Navbar, NavbarHome, Footer} from "./_index.js";
 import {useHistory} from "react-router-dom";
 
 const MainApp = () => {
@@ -45,16 +45,7 @@ const MainApp = () => {
         <></> 
       }
 
-      {content === "partenaires-et-soutiens"?
-       <PartnersSupports/> :
-        <></> 
-      }
-
-      {content === "contact"?
-       <Contact/> :
-        <></> 
-      }
-      
+      {content !== "home" ? <Footer/> : <></>}      
     </div>
   )
 };
