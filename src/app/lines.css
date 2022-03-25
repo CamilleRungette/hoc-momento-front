@@ -1,5 +1,5 @@
 .lines1 {
-  height: 80px;
+  height: 100%;
   position: relative; }
   .lines1 .l1 {
     border-top: 1px solid #3e79bc;
@@ -33,8 +33,8 @@
     left: 0; }
 
 .lines2 {
-  height: 80px;
-  position: relative; }
+  position: relative;
+  height: 100%; }
   .lines2 .l1 {
     border-top: 1px solid #3e79bc;
     position: absolute;
@@ -73,8 +73,8 @@
     left: 0; }
 
 .lines3 {
-  height: 80px;
-  position: relative; }
+  position: relative;
+  height: 100%; }
   .lines3 .l1 {
     border-top: 1px solid #3e79bc;
     position: absolute;

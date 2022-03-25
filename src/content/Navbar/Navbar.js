@@ -1,24 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 const Navbar = ({setState}) => {
 
-  const [navbarStyle, setNavbarStyle] = useState(false);
-
-  useEffect(() => {
-    changeBackground()
-    window.addEventListener("scroll", changeBackground)
-  }, [])
-
-  const changeBackground = () => {
-    if (window.scrollY > 900){
-      setNavbarStyle(true);
-    } else {
-      setNavbarStyle(false);
-    };
-  };
-
   return (
-    <div className={navbarStyle ? "navbar-main" : "navbar-home"}>
+    <div className="navbar-main">
       <div className='logo-div'>
         <img onClick={(e) => setState("home")} className='logo pointer' alt="Hoc Momento" src="/images/logo_noir.png"/>
       </div>

@@ -1,0 +1,42 @@
+@import "../commons/colors.scss";
+
+.company-main{
+  margin-top: 100px;
+  padding: 4rem;
+
+  .top{
+    display: flex;
+    margin-top: 1rem;
+  
+    .left{
+      width: 43%;
+  
+      .company-lines1{
+        height: 70px;
+        width: 80%
+      };
+  
+      .picture-div{
+        width: 100%;
+        margin-top: 50px
+      };
+    };
+  
+    .right{
+      width: 57%;
+      padding-left: 2rem;
+  
+      p {
+        margin-top: 56px;
+        text-align: justify
+      }
+    };
+  };
+
+  .company-lines2{
+    height: 80px;
+    width: 30%;
+    margin-left: auto
+  }
+
+};

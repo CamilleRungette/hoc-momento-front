@@ -1,7 +1,7 @@
 @import "../commons/colors.scss";
 
 .lines1{
-  height: 80px;
+  height: 100%;
   position: relative;
   
   .l1{
@@ -46,9 +46,9 @@
 };
 
 .lines2{
-  height: 80px;
   position: relative;
-  
+  height: 100%;
+
   .l1{
     border-top: 1px solid $primary;
     position: absolute;
@@ -99,8 +99,8 @@
 };
 
 .lines3{
-  height: 80px;
   position: relative;
+  height: 100%;
 
   .l1{
     border-top: 1px solid $primary;
