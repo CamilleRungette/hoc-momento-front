@@ -16,10 +16,10 @@
     text-align: center;
     display: flex;
     align-items: center;
+    margin-left: 30px;
 
     .logo{
       height: 50px;
-      margin-left: 30px;
     };
   };
 
@@ -52,6 +52,28 @@
   };
 };
 
+.popover-main{
+  position: relative;
+
+  &:after{
+    display: none !important;
+  }
+  .popover{
+    display: none;
+    border: 1px solid $primary;
+    z-index: 5;
+    position: absolute;
+    top: 30px;
+    background-color: white;
+    padding: 10px 10px;
+    
+    li{
+      white-space: nowrap;
+      font-size: 18px;
+    }
+  }
+}
+
 .navbar-home{
   height: 70px;
   font-size: 20px;
@@ -66,10 +88,10 @@
     text-align: center;
     display: flex;
     align-items: center;
+    margin-left: 30px;
 
     .logo{
       height: 50px;
-      margin-left: 30px;
     };
   };
 

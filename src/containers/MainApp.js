@@ -1,52 +1,35 @@
-import React, {useState} from "react";
-import {Company, Shows, Home, CulturalActions, Agenda, PartnersSupports, Contact, Navbar, NavbarHome, Footer} from "./_index.js";
-import {useHistory} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Company, Home, Agenda, Navbar, NavbarHome, Footer, Navigation} from "./_index.js";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation
+} from "react-router-dom";
 
 const MainApp = () => {
-  const history = useHistory();
 
-  const [content, setContent] = useState("home");
+  const location = useLocation();
 
-  const setState = (component) => {
-    setContent(component);
-    history.push(component)
-  };
+  const [loc, setLoc] = useState(location);
+
+
+  useEffect(() => {
+  
+  }, [loc])
+  
+
 
   return(
-    <div>
-      {content === "home" ? 
-      <NavbarHome setState={setState} />
-      :
-      <Navbar setState={setState} />
-      }
-      
-      {content === "home"?
-       <Home/> :
-        <></> 
-      }
+    <Router className="main-app">
+      <Switch>
+        <Route path="/" exact component={Home}/>
+        <Route path="/compagnie" component={Company} />
+        <Route path="/agenda" component={Agenda} />
+      </Switch>
 
-      {content === "compagnie"?
-       <Company/> :
-        <></> 
-      }
-
-      {content === "spectacles"?
-       <Shows/> :
-        <></> 
-      }
-
-      {content === "actions-culturelles"?
-       <CulturalActions/> :
-        <></> 
-      }
-
-      {content === "agenda"?
-       <Agenda/> :
-        <></> 
-      }
-
-      {content !== "home" ? <Footer/> : <></>}      
-    </div>
+    
+    </Router>
   )
 };
 
