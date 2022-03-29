@@ -1,14 +1,38 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
- 
+import axios from "axios";
+import 'antd/dist/antd.css';
+import { Popover } from 'antd'; 
 
 const NavbarHome = () => {
 
   const [navbarStyle, setNavbarStyle] = useState(true);
+  const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
+  const [actionsContent, setActionsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
 
   useEffect(() => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
+
+    axios.get('/shows')
+    .then(res => {
+      let content = <ul className='no-list-style menu-list'>
+      {res.data.shows.map(show => (
+        <li className='pointer'>{show.title}</li>
+      ))}
+      </ul>
+      setShowsContent(content);
+    });
+
+    axios.get('/actions')
+    .then(res => {
+      let content = <ul className='no-list-style menu-list'>
+      {res.data.actions.map(action => (
+        <li className='pointer'>{action.place}</li>
+      ))}
+      </ul>
+      setActionsContent(content)
+    });
   },[])
 
   const changeBackground = () => {
@@ -29,8 +53,12 @@ const NavbarHome = () => {
 
       <ul className='navbar-list no-list-style flex-space-between'>
         <li className='pointer'><Link className='link' to="/compagnie">Compagnie </Link></li> 
-        <li className='pointer'><Link className='link' to="/">Spectacles </Link></li> 
-        <li className='pointer'><Link className='link' to="/">Actions Culturelles </Link></li> 
+        <Popover className='navbar-popover' content={showsContent} placement='bottom' >
+          <li className='pointer'>Spectacles </li>
+        </Popover>
+        <Popover className='navbar-popover' content={actionsContent} placement="bottom">
+          <li className='pointer'>Actions Culturelles </li>
+        </Popover>
         <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
       </ul>
     </div>

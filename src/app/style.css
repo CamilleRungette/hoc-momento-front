@@ -5,7 +5,8 @@
 
 .flex-space-between {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
 
 .flex-space-around {
   display: flex;
@@ -29,7 +30,7 @@
 
 .link {
   text-decoration: none;
-  color: inherit; }
+  color: inherit !important; }
 
 .primary-button {
   background-color: #3e79bc;
@@ -82,7 +83,8 @@
       height: 50px; }
   .navbar-main .navbar-list {
     margin-right: 20px;
-    color: #3e79bc; }
+    color: #3e79bc;
+    margin-top: 10px; }
     .navbar-main .navbar-list li {
       margin-left: 20px;
       margin-right: 20px;
@@ -100,22 +102,6 @@
       .navbar-main .navbar-list li:hover:after {
         transform: scaleX(1);
         transform-origin: 0 50%; }
-
-.popover-main {
-  position: relative; }
-  .popover-main:after {
-    display: none !important; }
-  .popover-main .popover {
-    display: none;
-    border: 1px solid #3e79bc;
-    z-index: 5;
-    position: absolute;
-    top: 30px;
-    background-color: white;
-    padding: 10px 10px; }
-    .popover-main .popover li {
-      white-space: nowrap;
-      font-size: 18px; }
 
 .navbar-home {
   height: 70px;
@@ -154,6 +140,27 @@
       .navbar-home .navbar-list li:hover:after {
         transform: scaleX(1);
         transform-origin: 0 50%; }
+
+.loading-div {
+  width: 50px; }
+
+.menu-list {
+  color: #3e79bc;
+  font-size: 16px;
+  padding: 10px 10px 0 10px; }
+  .menu-list li {
+    position: relative;
+    text-decoration: none; }
+    .menu-list li:after {
+      display: block;
+      content: '';
+      border-bottom: solid 1px #3e79bc;
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+      transform-origin: 100% 50%; }
+    .menu-list li:hover:after {
+      transform: scaleX(1);
+      transform-origin: 0 50%; }
 
 .carousel-main {
   position: relative;
@@ -407,10 +414,13 @@
 
 body {
   margin: 0 !important;
-  font-family: 'Josefin Sans', sans-serif; }
+  font-family: 'Josefin Sans', sans-serif !important; }
 
 button {
-  font-family: 'Josefin Sans', sans-serif; }
+  font-family: 'Josefin Sans', sans-serif !important; }
 
 img {
   width: 100%; }
+
+p {
+  font-size: 16px; }

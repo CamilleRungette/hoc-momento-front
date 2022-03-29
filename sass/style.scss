@@ -5,13 +5,17 @@
 
 body{
   margin: 0 !important;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif !important;
 }; 
 
 button{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif !important;
 };
 
 img{
   width: 100%;
+};
+
+p{
+  font-size: 16px;
 }

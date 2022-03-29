@@ -8,6 +8,7 @@
 .flex-space-between{
   display: flex;
   justify-content: space-between;
+  align-items: center
 };
 
 .flex-space-around{
@@ -38,5 +39,5 @@
 
 .link{
   text-decoration: none;
-  color: inherit
+  color: inherit !important;
 };

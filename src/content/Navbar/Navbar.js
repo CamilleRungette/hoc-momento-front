@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import 'antd/dist/antd.css';
+import { Popover } from 'antd';
+
 
 const Navbar = () => {
 
-  const [shows, setShows] = useState([]);
-  const [actions, setActions] = useState([]);
+  const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
+  const [actionsContent, setActionsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
 
   useEffect(() => {
-
     axios.get('/shows')
     .then(res => {
-      setShows(res.data.shows);
+      let content = <ul className='no-list-style menu-list'>
+      {res.data.shows.map(show => (
+        <li className='pointer'>{show.title}</li>
+      ))}
+      </ul>
+      setShowsContent(content);
     });
 
     axios.get('/actions')
     .then(res => {
-      setActions(res.data.actions);
-    })
+      let content = <ul className='no-list-style menu-list'>
+      {res.data.actions.map(action => (
+        <li className='pointer'>{action.place}</li>
+      ))}
+      </ul>
+      setActionsContent(content)
+    });
   }, []);
 
-
-  const showPopover = e => {
-    if (e.target.className.includes("shows")){
-      document.getElementById('popover-shows').style.display = 'block';
-    }
-  };
-
-  const hidePopover = e => {
-    if (e.target.className.includes("shows")){
-      document.getElementById('popover-shows').style.display = 'none';
-    }
-  };
 
   return (
     <div className="navbar-main">
@@ -41,24 +41,12 @@ const Navbar = () => {
 
       <ul className='navbar-list no-list-style flex-space-between'>
         <li className='pointer'><Link className='link' to="/compagnie"> Compagnie </Link></li>
-        <li className='pointer popover-main shows' onMouseEnter={showPopover}>Spectacles
-        <div id="popover-shows" className='popover shows' onMouseLeave={hidePopover} >
-            <ul className='no-list-style shows'>
-              {shows.map(show => (
-                <li key={show.id} >{show.title} </li>
-              ))}
-            </ul>
-          </div> 
-         </li>
-        <li className='pointer popover-main actions'>Actions Culturelles
-        <div id="popover-shows" className='popover shows' onMouseLeave={hidePopover} >
-            <ul className='no-list-style shows'>
-              {actions.map(action => (
-                <li key={action.id} >{action.title} </li>
-              ))}
-            </ul>
-          </div> 
-        </li>
+        <Popover className='navbar-popover' content={showsContent} placement='bottom' >
+          <li className='pointer'>Spectacles </li>
+        </Popover>
+        <Popover className='navbar-popover' content={actionsContent} placement="bottom">
+          <li className='pointer'>Actions Culturelles </li>
+        </Popover>
         <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li>
       </ul>
      
