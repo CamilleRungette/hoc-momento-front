@@ -22,16 +22,22 @@ const Carousel = ({slides}) => {
 
   return (
     <section className='carousel-main'>
-      <MdArrowBackIosNew className='left-arrow pointer' onClick={prevSlide} />
-      <MdOutlineArrowForwardIos className='right-arrow pointer' onClick={nextSlide} />
       {slides.map((slide, index) => {
         return(
           <div className={index === current ? 'slide active' : 'slide'} key={index}> 
-            {index === current && ( 
-              <img src={slide.image} alt="travel" className='carousel-item' />
+            {index === current && (
+              <div className='carousel-div'>
+                <MdArrowBackIosNew className='left-arrow pointer' onClick={prevSlide} />
+                <MdOutlineArrowForwardIos className='right-arrow pointer' onClick={nextSlide} />
+                <img src={slide.image} alt="travel" className='carousel-item' />
+                <div className='text'>
+                  <h2 className='title'>{slide.title}</h2>
+                  <p className='subtitle'>{slide.subtitle} </p>
+                </div>
+              </div>
             )}
           </div>
-          )
+          );
       })}
     </section>
   )

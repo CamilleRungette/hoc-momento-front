@@ -13,8 +13,9 @@ const Navbar = () => {
   useEffect(() => {
     axios.get('/shows')
     .then(res => {
+      console.log("response", res);
       let content = <ul className='no-list-style menu-list'>
-      {res.data.shows.map(show => (
+      {res.data.map(show => (
         <li className='pointer'>{show.title}</li>
       ))}
       </ul>
@@ -23,8 +24,9 @@ const Navbar = () => {
 
     axios.get('/actions')
     .then(res => {
+      console.log("actions", res);
       let content = <ul className='no-list-style menu-list'>
-      {res.data.actions.map(action => (
+      {res.data.map(action => (
         <li className='pointer'>{action.place}</li>
       ))}
       </ul>

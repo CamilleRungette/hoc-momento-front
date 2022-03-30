@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Company, Home, Agenda, Navbar, NavbarHome, Footer, Navigation} from "./_index.js";
+import {Company, Home, Agenda, Show} from "./_index.js";
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,9 +26,9 @@ const MainApp = () => {
         <Route path="/" exact component={Home}/>
         <Route path="/compagnie" component={Company} />
         <Route path="/agenda" component={Agenda} />
+        <Route path="/spectacle/:id" component={Show} />
       </Switch>
 
-    
     </Router>
   )
 };
