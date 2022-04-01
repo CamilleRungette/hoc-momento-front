@@ -27,7 +27,7 @@
     "build:css": "node-sass ./sass/style.scss -o src/app ",
     "watch:css": "npm run build:css && node-sass ./sass/style.scss -o src/app -w -r",
     "build:js": "react-scripts build",
-    "build": "CI=false && npm-run-all build:*",
+    "build": "npm-run-all build:*",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
