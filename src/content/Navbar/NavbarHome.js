@@ -16,7 +16,7 @@ const NavbarHome = () => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
 
-    axios.get(`${API_URL}/shows`)
+    axios.get(`${API_URL}/shows`, {headers: {"Access-Control-Allow-Origin": "*"}})
     .then(res => {
       console.log("response", res);
       let content = <ul className='no-list-style menu-list'>
