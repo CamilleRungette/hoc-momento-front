@@ -14,7 +14,7 @@ const NavbarHome = () => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
 
-    axios.get('http://hoc-momento-back.herokuapp.com/shows', {headers: { "Access-Control-Allow-Origin": "*"}})
+    axios.get('https://hoc-momento-back.herokuapp.com/shows', {headers: { "Access-Control-Allow-Origin": "*"}})
     .then(res => {
       console.log("response", res);
       let content = <ul className='no-list-style menu-list'>
