@@ -6,6 +6,8 @@ import { Popover } from 'antd';
 
 const NavbarHome = () => {
 
+  const API_URL = "https://hoc-momento-back.herokuapp.com"
+
   const [navbarStyle, setNavbarStyle] = useState(true);
   const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
   const [actionsContent, setActionsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
@@ -14,7 +16,7 @@ const NavbarHome = () => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
 
-    axios.get(`/shows`)
+    axios.get(`${API_URL}/shows`)
     .then(res => {
       console.log("response", res);
       let content = <ul className='no-list-style menu-list'>
