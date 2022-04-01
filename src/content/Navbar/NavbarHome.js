@@ -13,7 +13,7 @@ const NavbarHome = () => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
 
-    axios.get(`${process.env.REACT_APP_URL}/shows`)
+    axios.get(`https://hoc-momento-back.herokuapp.com/shows`)
     .then(res => {
       console.log("response", res);
       let content = <ul className='no-list-style menu-list'>
