@@ -14,12 +14,12 @@ const NavbarHome = () => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
 
-    axios.get('/shows')
+    axios.get('http://hoc-momento-back.herokuapp.com/shows', {headers: { "Access-Control-Allow-Origin": "*"}})
     .then(res => {
       console.log("response", res);
       let content = <ul className='no-list-style menu-list'>
       {res.data.map(show => (
-        <li className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
+        <li className='pointer' key={show._id}> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
       ))}
       </ul>
       setShowsContent(content);
@@ -28,16 +28,15 @@ const NavbarHome = () => {
       console.log(error);
     });
 
-    axios.get('/actions')
-    .then(res => {
-      console.log("actions", res);
-      let content = <ul className='no-list-style menu-list'>
-      {res.data.map(action => (
-        <li className='pointer'> {action.place}</li>
-      ))}
-      </ul>
-      setActionsContent(content)
-    });
+    // axios.get('/actions')
+    // .then(res => {
+    //   let content = <ul className='no-list-style menu-list'>
+    //   {res.data.map(action => (
+    //     <li key={action._id} className='pointer'> {action.place}</li>
+    //   ))}
+    //   </ul>
+    //   setActionsContent(content)
+    // });
   },[])
 
   const changeBackground = () => {
