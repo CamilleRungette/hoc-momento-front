@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import 'antd/dist/antd.css';
-import { Popover } from 'antd'; 
 
 const NavbarHome = () => {
 
-  const API_URL = "https://hoc-momento-back.herokuapp.com"
 
   const [navbarStyle, setNavbarStyle] = useState(true);
   const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
@@ -16,7 +13,7 @@ const NavbarHome = () => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
 
-    axios.get(`${API_URL}/shows`, {headers: {"Access-Control-Allow-Origin": "*"}})
+    axios.get(`/shows`)
     .then(res => {
       console.log("response", res);
       let content = <ul className='no-list-style menu-list'>
@@ -59,12 +56,8 @@ const NavbarHome = () => {
 
       <ul className='navbar-list no-list-style flex-space-between'>
         <li className='pointer'><Link className='link' to="/compagnie">Compagnie </Link></li> 
-        <Popover className='navbar-popover' content={showsContent} placement='bottom' >
           <li className='pointer'>Spectacles </li>
-        </Popover>
-        <Popover className='navbar-popover' content={actionsContent} placement="bottom">
           <li className='pointer'>Actions Culturelles </li>
-        </Popover>
         <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
       </ul>
     </div>
