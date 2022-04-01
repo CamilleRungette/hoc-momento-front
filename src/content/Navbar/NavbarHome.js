@@ -6,9 +6,6 @@ import { Popover } from 'antd';
 
 const NavbarHome = () => {
 
-  // const url = "http://localhost:3000"
-  // const url = "https://hoc-momento-back.herokuapp.com"
-
   const [navbarStyle, setNavbarStyle] = useState(true);
   const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
   const [actionsContent, setActionsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
