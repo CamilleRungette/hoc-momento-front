@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { url } from '../../url';
 
 const NavbarHome = () => {
 
@@ -13,9 +14,9 @@ const NavbarHome = () => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
 
-    axios.get(`https://hoc-momento-back.herokuapp.com/shows`)
+    axios.get(`${url}/shows`)
     .then(res => {
-      console.log(res);
+      console.log("Spectacles:", res);
       let content = <ul className='no-list-style menu-list'>
       {res.data.map(show => (
         <li key={show._id} className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
@@ -27,8 +28,9 @@ const NavbarHome = () => {
       console.log(error);
     });
 
-    axios.get('/actions')
+    axios.get(`${url}/actions`)
     .then(res => {
+      console.log("actions", res);
       let content = <ul className='no-list-style menu-list'>
       {res.data.map(action => (
         <li key={action._id} className='pointer'> {action.place}</li>
