@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Navbar, Footer} from "./_index";
+import { useParams } from 'react-router';
 
 const Show = () => {
+
+  const id = useParams();
+
+  console.log(id);
   return (
     <div>
       <Navbar/>

@@ -16,10 +16,9 @@ const NavbarHome = () => {
 
     axios.get('/shows')
     .then(res => {
-      console.log("response", res);
       let content = <ul className='no-list-style menu-list'>
       {res.data.map(show => (
-        <li className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
+        <li key={show._id} className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
       ))}
       </ul>
       setShowsContent(content);
@@ -30,10 +29,9 @@ const NavbarHome = () => {
 
     axios.get('/actions')
     .then(res => {
-      console.log("actions", res);
       let content = <ul className='no-list-style menu-list'>
       {res.data.map(action => (
-        <li className='pointer'> {action.place}</li>
+        <li key={action._id} className='pointer'> {action.place}</li>
       ))}
       </ul>
       setActionsContent(content)
