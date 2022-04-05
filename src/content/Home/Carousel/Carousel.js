@@ -1,10 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState} from 'react'
 import {MdArrowBackIosNew, MdOutlineArrowForwardIos} from "react-icons/md"
 
 const Carousel = ({slides}) => {
 
   const [current, setCurrent] = useState(0);
   const length = slides.length;
+
+
+  for (let i = 0; i< 100 ; i++) {
+    setTimeout(function(){
+      nextSlide()
+    }, 7000)
+  }
 
 
   if (!Array.isArray(slides) || slides.length <=0 ){

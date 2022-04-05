@@ -1,8 +1,7 @@
 .home-footer-main {
   background-color: #f5f5f5;
   padding: 3% 6% 2% 6%;
-  margin-top: 5%;
-  position: relative; }
+  margin-top: 5%; }
   .home-footer-main .links {
     display: flex;
     justify-content: center;
@@ -23,6 +22,11 @@
   .home-footer-main .footer-home-list .instagram {
     font-size: 24px !important;
     margin-left: -1px !important; }
+  .home-footer-main .footer-home-list .network {
+    transition-duration: .5s; }
+    .home-footer-main .footer-home-list .network:hover {
+      color: grey !important;
+      transition-duration: .5s; }
   .home-footer-main .contact-form {
     display: flex;
     flex-direction: column;

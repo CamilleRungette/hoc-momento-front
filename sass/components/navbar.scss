@@ -23,11 +23,15 @@
     };
   };
 
+  .popover{
+    border: 1px solid $primary;
+  }
+
+
   .navbar-list{
     margin-right: 20px;
     color: $primary;
-    margin-top: 10px;
-  
+    position: relative;  
   
     li{
       margin-left: 20px;
@@ -52,11 +56,10 @@
       };
     };
   };
-  
-  
 };
 
 .navbar-home{
+  border-bottom: 2px solid transparent;
   height: 70px;
   font-size: 20px;
   display: flex;
@@ -82,7 +85,7 @@
     color: white;
 
     li{
-      margin-left: 20px;
+      margin-left: 10px;
       margin-right: 20px;
       padding-top: 3px;
       position:relative;
@@ -112,7 +115,7 @@
 };
 
 .menu-list{
-    color: $primary;
+    color: $primary !important;
     font-size: 16px;
     padding: 10px 10px 0 10px;
     
@@ -135,3 +138,44 @@
       };
     };
   };
+
+  .popover-div{
+    position: relative;
+  }
+
+  .popover{
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    padding: .5rem 0 .5rem 0;
+    display: none;
+    // border: 1px solid $primary;
+
+    a{
+      color: $primary;
+      text-decoration: none;
+  
+      &:after {
+        display:block;
+        content: '';
+        border-bottom: solid 1px $primary;  
+        transform: scaleX(0);  
+        transition: transform 250ms ease-in-out;
+        transform-origin:100% 50%;
+      };
+  
+      &:hover:after { 
+        transform: scaleX(1);
+        transform-origin:0 50%;
+      };
+    }
+
+    .popover-list{
+      display: flex;
+      flex-direction: column;
+
+      li{
+        white-space: nowrap;
+      }
+    }
+  }

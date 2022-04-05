@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Company, Home, Agenda, Show} from "./_index.js";
 import {
   BrowserRouter,
