@@ -6,6 +6,7 @@ import { Popover } from 'antd';
 
 const NavbarHome = () => {
 
+
   const [navbarStyle, setNavbarStyle] = useState(true);
   const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
   const [actionsContent, setActionsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
@@ -14,7 +15,7 @@ const NavbarHome = () => {
       changeBackground();
     window.addEventListener("scroll", changeBackground);
 
-    axios.get('/shows')
+    axios.get(`/shows`)
     .then(res => {
       let content = <ul className='no-list-style menu-list'>
       {res.data.map(show => (
@@ -61,8 +62,7 @@ const NavbarHome = () => {
         </Popover>
         <Popover className='navbar-popover' content={actionsContent} placement="bottom">
           <li className='pointer'>Actions Culturelles </li>
-        </Popover>
-        <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
+        </Popover>        <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
       </ul>
     </div>
   )

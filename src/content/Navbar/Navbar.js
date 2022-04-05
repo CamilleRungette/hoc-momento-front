@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import 'antd/dist/antd.css';
-import { Popover } from 'antd';
+import { Popover } from 'antd'; 
 
 
 const Navbar = () => {
@@ -46,8 +46,7 @@ const Navbar = () => {
         </Popover>
         <Popover className='navbar-popover' content={actionsContent} placement="bottom">
           <li className='pointer'>Actions Culturelles </li>
-        </Popover>
-        <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li>
+        </Popover>        <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li>
       </ul>
      
     </div>
