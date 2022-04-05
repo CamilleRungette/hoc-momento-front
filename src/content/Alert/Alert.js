@@ -2,7 +2,7 @@ import React, {forwardRef, useImperativeHandle, useEffect} from 'react';
 import Alert from '@mui/material/Alert';
 
 
-const AlertComponent = forwardRef(({severity, message}, ref) => {
+const AlertComponent = forwardRef(({alertInfos}, ref) => {
 
   useEffect(() => {
     const alert = document.getElementsByClassName('alert')[0];
@@ -27,7 +27,7 @@ const AlertComponent = forwardRef(({severity, message}, ref) => {
   }));
 
   return (
-    <Alert severity={severity}  onClose={closeAlert} className='alert'>{message}</Alert>
+    <Alert severity={alertInfos.severity}  onClose={closeAlert} className='alert'>{alertInfos.message}</Alert>
   )
 });
 

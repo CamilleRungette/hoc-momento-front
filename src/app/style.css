@@ -40,7 +40,8 @@
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
-  min-width: 150px;
+  width: 50%;
+  margin: auto;
   cursor: pointer;
   transition-duration: 1s; }
   .primary-button:hover {
@@ -355,7 +356,12 @@
       text-align: center; }
       .home-footer-main .links .link-part .inside {
         display: inline-block;
-        text-align: left; }
+        text-align: left;
+        position: relative; }
+        .home-footer-main .links .link-part .inside .div-logo {
+          width: 9rem;
+          position: absolute;
+          bottom: -10rem; }
   .home-footer-main .footer-home-list li {
     margin-bottom: 1rem; }
   .home-footer-main .footer-home-list .network-icon {

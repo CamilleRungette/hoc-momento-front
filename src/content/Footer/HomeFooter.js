@@ -1,12 +1,25 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {AiFillFacebook, AiOutlineInstagram, AiFillYoutube, AiOutlineMail} from "react-icons/ai";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Alert} from "./_index.js";
+var Recaptcha = require('react-recaptcha');
+
 const HomeFooter = () => {
 
-  const modalRef = useRef();
+  const alertRef = useRef();
+
+  const [isVerified, setIsVerified] = useState(false);
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [alert, setAlert] = useState({
+    severity: 'success',
+    message: ''
+  })
 
   const theme = createTheme({
     typography: {
@@ -20,13 +33,32 @@ const HomeFooter = () => {
   const copyLink = () => {
     let address = "hocmomentotheatre@gmail.com";
     navigator.clipboard.writeText(address);
+    setAlert({severity: "success", message: "L'adresse email est copiée dans le presse-papier"})
+    alertRef.current.showAlert();
+  };
 
-    modalRef.current.showAlert()
+  const handleState = (prop) => (event) => {
+    setValues({...values, [prop]: [event.target.value]})
+  };
+
+  const saveMessage = (e) => {
+    e.preventDefault();
+    if (isVerified) {
+      setAlert({severity: "success", message: "Votre message a bien été envoyé"})
+    } else {
+      setAlert({severity: "error", message: "Vous devez valider la captcha"})
+      alertRef.current.showAlert();
+    }
+  };
+
+
+  const verifyCallback = (response) => {
+    if (response) setIsVerified(true);
   };
 
   return (
     <div className='home-footer-main'>
-      <Alert ref={modalRef} severity={"success"} message={"L'adresse email est copiée dans le presse-papier"} />
+      <Alert ref={alertRef} alertInfos={alert}  />
       <div className='links'>
         <div className='credits link-part'>
           <div className='inside'>
@@ -37,7 +69,11 @@ const HomeFooter = () => {
               <li>Piero Oronzo</li>
               <li>Ariane Descoueyte</li>
             </ul>
+          <div className='div-logo'>
+            <img src="/images/logo_noir.png" />
           </div>
+          </div>
+
         </div>
         <div className='social-networks link-part'>
           <div className='inside'>
@@ -61,11 +97,14 @@ const HomeFooter = () => {
                 label="Nom"
                 size="small"
                 className='contact-input'
+                value={values.name}
+                onChange={handleState('name')}
               />
               <TextField
                 label="Email"
                 size="small"
                 className='contact-input'
+                onChange={handleState('email')}
               />
               <TextField
                 label="Message"
@@ -73,9 +112,17 @@ const HomeFooter = () => {
                 size="small"
                 rows={4}
                 className='contact-input'
+                onChange={handleState('message')}
               />
-
-              <button className='primary-button'>Envoyer</button>
+              <div className='captcha'>
+                <Recaptcha
+                  sitekey={process.env.REACT_APP_SITE_CAPTCHA}
+                  render="explicit"
+                  verifyCallback={verifyCallback}
+                  size='normal'
+                />
+              </div>
+              <button className='primary-button' onClick={(e)=>saveMessage(e)} >Envoyer</button>
             </Box>
           </ThemeProvider>
         </div>
