@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import 'antd/dist/antd.css';
-import { Popover } from 'antd'; 
 
 const NavbarHome = () => {
 
@@ -17,6 +15,7 @@ const NavbarHome = () => {
 
     axios.get(`/shows`)
     .then(res => {
+      console.log(res);
       let content = <ul className='no-list-style menu-list'>
       {res.data.map(show => (
         <li key={show._id} className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
@@ -57,12 +56,9 @@ const NavbarHome = () => {
 
       <ul className='navbar-list no-list-style flex-space-between'>
         <li className='pointer'><Link className='link' to="/compagnie">Compagnie </Link></li> 
-        <Popover className='navbar-popover' content={showsContent} placement='bottom' >
           <li className='pointer'>Spectacles </li>
-        </Popover>
-        <Popover className='navbar-popover' content={actionsContent} placement="bottom">
           <li className='pointer'>Actions Culturelles </li>
-        </Popover>        <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
+        <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
       </ul>
     </div>
   )

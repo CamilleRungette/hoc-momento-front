@@ -9,7 +9,6 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "^4.19.5",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "nodemon": "^2.0.15",
@@ -28,7 +27,7 @@
     "build:css": "node-sass ./sass/style.scss -o src/app ",
     "watch:css": "npm run build:css && node-sass ./sass/style.scss -o src/app -w -r",
     "build:js": "react-scripts build",
-    "build": "CI=false && npm-run-all build:*",
+    "build": "npm-run-all build:*",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
