@@ -44,7 +44,8 @@ const HomeFooter = () => {
   const saveMessage = (e) => {
     e.preventDefault();
     if (isVerified) {
-      setAlert({severity: "success", message: "Votre message a bien été envoyé"})
+      setAlert({severity: "success", message: "Votre message a bien été envoyé"});
+      alertRef.current.showAlert();
     } else {
       setAlert({severity: "error", message: "Vous devez valider la captcha"})
       alertRef.current.showAlert();
