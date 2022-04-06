@@ -1,0 +1,58 @@
+.show-main{
+  margin-top: 100px;
+  padding: 4rem 4rem 0 4rem ;
+  position: relative;
+  width: 90%;
+
+  .show-title{
+    text-align: center;
+  }
+  .show-lines1{
+    height: 70px;
+    width: 55%;
+    position: absolute;
+    top: 0;
+  };
+
+  .show-description{
+    width: 80%;
+    text-align: justify;
+    margin: auto;
+    margin-bottom: 40px;
+
+    ul{
+      list-style: none;    
+    };
+  };
+
+  .links{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+
+    li{
+      margin-bottom: 10px;
+    }
+
+    .show-link{
+      color: black;
+    };
+
+    .icon{
+      font-size: 18px;
+      margin-left: 10px;
+      vertical-align: middle;
+    };
+  };
+
+};
+.end-lines{
+  width: 95%;
+  display: flex;
+  justify-content: end;
+
+  .show-lines2{
+    height: 70px;
+    width: 55%;
+  };
+}

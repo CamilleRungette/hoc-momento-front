@@ -476,6 +476,46 @@
     width: 30%;
     margin-left: auto; }
 
+.show-main {
+  margin-top: 100px;
+  padding: 4rem 4rem 0 4rem;
+  position: relative;
+  width: 90%; }
+  .show-main .show-title {
+    text-align: center; }
+  .show-main .show-lines1 {
+    height: 70px;
+    width: 55%;
+    position: absolute;
+    top: 0; }
+  .show-main .show-description {
+    width: 80%;
+    text-align: justify;
+    margin: auto;
+    margin-bottom: 40px; }
+    .show-main .show-description ul {
+      list-style: none; }
+  .show-main .links {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px; }
+    .show-main .links li {
+      margin-bottom: 10px; }
+    .show-main .links .show-link {
+      color: black; }
+    .show-main .links .icon {
+      font-size: 18px;
+      margin-left: 10px;
+      vertical-align: middle; }
+
+.end-lines {
+  width: 95%;
+  display: flex;
+  justify-content: end; }
+  .end-lines .show-lines2 {
+    height: 70px;
+    width: 55%; }
+
 body {
   margin: 0 !important;
   font-family: 'Josefin Sans', sans-serif !important; }
@@ -488,3 +528,7 @@ img {
 
 p {
   font-size: 16px; }
+
+h1 {
+  font-size: 40px;
+  font-weight: lighter; }
