@@ -116,12 +116,12 @@ const HomeFooter = () => {
                 onChange={handleState('message')}
               />
               <div className='captcha'>
-                {/* <Recaptcha
+                <Recaptcha
                   sitekey={process.env.REACT_APP_SITE_CAPTCHA}
                   render="explicit"
                   verifyCallback={verifyCallback}
                   size='normal'
-                /> */}
+                />
               </div>
               <button className='primary-button' onClick={(e)=>saveMessage(e)} >Envoyer</button>
             </Box>
