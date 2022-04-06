@@ -3,7 +3,8 @@ import {AiFillFacebook, AiOutlineInstagram, AiFillYoutube, AiOutlineMail} from "
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {Alert} from "./_index.js";
+import {Alert, url} from "./_index.js";
+import axios from "axios";
 var Recaptcha = require('react-recaptcha');
 
 const HomeFooter = () => {
@@ -11,20 +12,17 @@ const HomeFooter = () => {
   
   const alertRef = useRef();
 
-  const [isVerified, setIsVerified] = useState(true);
+  const [isVerified, setIsVerified] = useState(false);
   const [values, setValues] = useState({
     name: "",
     email: "",
     message: ""
   });
+  const [errors, setErrors] = useState({});
   const [alert, setAlert] = useState({
     severity: 'success',
     message: ''
   });
-
-  useEffect(() => {
-    window.loadCallback = loadCallback;
-  }, [])
 
   const theme = createTheme({
     typography: {
@@ -43,23 +41,39 @@ const HomeFooter = () => {
   };
 
   const handleState = (prop) => (event) => {
-    setValues({...values, [prop]: [event.target.value]})
+    setValues({...values, [prop]: event.target.value})
   };
 
   const saveMessage = (e) => {
     e.preventDefault();
-    if (isVerified) {
-      setAlert({severity: "success", message: "Votre message a bien été envoyé"});
-      alertRef.current.showAlert();
+    if (values.name && values.email && values.message){
+      if (isVerified) {
+      axios.post(`${url}/message`, values)
+      .then(res => {
+        setAlert({severity: "success", message: "Votre message a bien été envoyé"});
+        alertRef.current.showAlert();
+        setIsVerified(false);
+        setValues({
+          name: "",
+          email: "",
+          message: ""
+        })
+      })
+      .catch(err => {
+        setAlert({severity: "error", message: "Erreur avec l'envoi de votre message, veuillez retenter plus tard"});
+        alertRef.current.showAlert();
+      });
+      } else {
+        setAlert({severity: "error", message: "Vous devez valider la captcha"})
+        alertRef.current.showAlert();
+      };
     } else {
-      setAlert({severity: "error", message: "Vous devez valider la captcha"})
+      setAlert({severity: "warning", message: "Vous devez remplir tous les champs du formulaire"});
       alertRef.current.showAlert();
     }
-  };
 
-  const loadCallback = () => {
-    console.log("loaded");
-  }
+   
+  };
 
   const verifyCallback = (response) => {
     if (response) setIsVerified(true);
@@ -97,42 +111,47 @@ const HomeFooter = () => {
         </div>
         <div className='contact link-part'>
           <h2> Contactez-nous</h2>
-          <ThemeProvider theme={theme}>
-            <Box
-            component="form"
-            className='contact-form'
-            >
-              <TextField
-                label="Nom"
-                size="small"
-                className='contact-input'
-                value={values.name}
-                onChange={handleState('name')}
-              />
-              <TextField
-                label="Email"
-                size="small"
-                className='contact-input'
-                onChange={handleState('email')}
-              />
-              <TextField
-                label="Message"
-                multiline
-                size="small"
-                rows={4}
-                className='contact-input'
-                onChange={handleState('message')}
-              />
-              <div className='captcha'>
-                <Recaptcha
-                  sitekey={process.env.REACT_APP_SITE_CAPTCHA}
-                  render="explicit"
-                  verifyCallback={verifyCallback}
-                  size='normal'
+            <ThemeProvider theme={theme}>
+              <Box
+              component="form"
+              className='contact-form'
+              >
+                <TextField
+                  id="name"
+                  label="Nom"
+                  size="small"
+                  className='contact-input'
+                  value={values.name}
+                  onChange={handleState('name')}
                 />
-              </div>
-              <button className='primary-button' onClick={(e)=>saveMessage(e)} >Envoyer</button>
-            </Box>
+                <TextField
+                  id="email"
+                  label="Email"
+                  size="small"
+                  className='contact-input'
+                  value={values.email}
+                  onChange={handleState('email')}
+                />
+                <TextField
+                  id="message"
+                  label="Message"
+                  multiline
+                  size="small"
+                  value={values.message}
+                  rows={4}
+                  className='contact-input'
+                  onChange={handleState('message')}
+                />
+                <div className='captcha'>
+                  <Recaptcha
+                    sitekey={process.env.REACT_APP_SITE_CAPTCHA}
+                    render="explicit"
+                    verifyCallback={verifyCallback}
+                    size='normal'
+                  />
+                </div>
+                <button className='primary-button' onClick={(e) => saveMessage(e)}>Envoyer</button>
+              </Box>
           </ThemeProvider>
         </div>
       </div>
