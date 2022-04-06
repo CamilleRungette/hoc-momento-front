@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import {AiFillFacebook, AiOutlineInstagram, AiFillYoutube, AiOutlineMail} from "react-icons/ai";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -8,6 +8,7 @@ var Recaptcha = require('react-recaptcha');
 
 const HomeFooter = () => {
 
+  
   const alertRef = useRef();
 
   const [isVerified, setIsVerified] = useState(true);
@@ -19,7 +20,11 @@ const HomeFooter = () => {
   const [alert, setAlert] = useState({
     severity: 'success',
     message: ''
-  })
+  });
+
+  useEffect(() => {
+    window.loadCallback = loadCallback;
+  }, [])
 
   const theme = createTheme({
     typography: {
@@ -52,6 +57,9 @@ const HomeFooter = () => {
     }
   };
 
+  const loadCallback = () => {
+    console.log("loaded");
+  }
 
   const verifyCallback = (response) => {
     if (response) setIsVerified(true);
@@ -119,6 +127,7 @@ const HomeFooter = () => {
                 <Recaptcha
                   sitekey={process.env.REACT_APP_SITE_CAPTCHA}
                   render="explicit"
+                  onloadCallback={loadCallback}
                   verifyCallback={verifyCallback}
                   size='normal'
                 />
