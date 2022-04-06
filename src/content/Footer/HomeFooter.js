@@ -127,7 +127,6 @@ const HomeFooter = () => {
                 <Recaptcha
                   sitekey={process.env.REACT_APP_SITE_CAPTCHA}
                   render="explicit"
-                  onloadCallback={loadCallback}
                   verifyCallback={verifyCallback}
                   size='normal'
                 />
