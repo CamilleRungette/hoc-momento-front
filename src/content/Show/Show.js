@@ -25,7 +25,7 @@ const Show = () => {
       setShow(res.data);
     })
     .catch(err => {
-      console.log(err);
+      console.log(err.message);
     })
   }, [id]);
 
@@ -48,8 +48,8 @@ const showModal = () => {
 
         <div className='carousel'>
           <ul className='photos-line no-list-style pointer'  onClick={showModal} >
-            {show.gallery.map(photo => (
-              <li><img src={photo} alt={show.title} className="photo"/></li>
+            {show.gallery.map((photo, i) => (
+              <li key={i}><img src={photo} alt={show.title} className="photo"/></li>
             ))}
           </ul>
         </div>
