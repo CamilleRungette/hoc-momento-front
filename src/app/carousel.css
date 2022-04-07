@@ -1,0 +1,10 @@
+.carousel-comp-main {
+  width: 70vw;
+  height: 75vh; }
+  .carousel-comp-main .carousel .paper-carousel {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .carousel-comp-main .carousel .paper-carousel img {
+      object-fit: cover; }

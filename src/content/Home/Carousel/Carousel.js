@@ -6,7 +6,7 @@ import {MdArrowBackIosNew, MdOutlineArrowForwardIos} from "react-icons/md"
 const CarouselComp = ({gallery}) => {
 console.log(gallery);
   return (
-    <div className='carousel-comp-main'>
+    <div>
       <Carousel
           interval={7000}
           className="carousel"

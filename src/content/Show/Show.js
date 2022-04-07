@@ -47,9 +47,9 @@ const showModal = () => {
         </div>
 
         <div className='carousel'>
-          <ul className='photos-line no-list-style'>
+          <ul className='photos-line no-list-style pointer'  onClick={showModal} >
             {show.gallery.map(photo => (
-              <li><img src={photo} alt={show.title} className="photo pointer" onClick={showModal} /></li>
+              <li><img src={photo} alt={show.title} className="photo"/></li>
             ))}
           </ul>
         </div>
@@ -71,6 +71,7 @@ const showModal = () => {
           </ul>
         </div>
         
+      <BasicModal ref={modalRef} content={ <CarouselComp gallery={show.gallery} autoplay={false} />} />
 
       </div>
       <div className='end-lines'>
@@ -79,7 +80,6 @@ const showModal = () => {
         </div>
       </div>
       <Footer/>
-      <BasicModal ref={modalRef} content={<CarouselComp gallery={show.gallery} autoplay={false} />} />
     </div>
   )
 }

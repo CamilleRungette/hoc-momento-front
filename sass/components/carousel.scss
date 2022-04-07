@@ -1,77 +1,18 @@
-// .carousel-main{
-//   position: relative;
-//   height: 90vh;
-//   width: 99vw;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
+.carousel-comp-main{
+  width: 70vw;
+  height: 75vh;
 
-//   .carousel-div{
-//     width: 99vw;
-//     height: 90vh;
-//     position: relative;
+  .carousel{
+    
+    .paper-carousel{
+      height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-//     .carousel-item{
-//       width: 100%;
-//     }
-
- 
-//     .right-arrow{
-//       position: absolute;
-//       top: 50%;
-//       right: 32px;
-//       font-size: 2rem;
-//       color: white;
-//       z-index: 10;
-//       user-select: none;
-//     };
-  
-//     .left-arrow{
-//       position: absolute;
-//       top: 50%;
-//       left: 32px;
-//       font-size: 2rem;
-//       color: white;
-//       z-index: 10;
-//       user-select: none;
-//     };
-//   };
-
-
-//   .slide{
-//     opacity: 0;
-//     transition-duration: 1s;
-//   };
-
-//   .slide.active {
-//     opacity: 1;
-//     transition-duration: 1s;
-//     // transform: scale(1);
-//   };
-
-// }
-
-// .carousel-comp-main{
-//   height: 100%;
-//   width: 100%;
-//   // text-align: center;
-//   background-color: red;
-  
-//   .paper-carousel{
-//     height: 90% !important;
-//     background-color: white !important;
-//     // background-color: red;
-//   //   margin: auto;
-//   //   box-shadow: none !important;
-//   //   display: flex;
-//   //   align-items: center;
-//   //   justify-content: center;
-
-//   img{
-//       width: 100%;
-//       object-fit: contain;
-  
-//     }
-  
-//   }
-// };
+      img{
+        object-fit: cover;
+      }
+    };
+  };
+};

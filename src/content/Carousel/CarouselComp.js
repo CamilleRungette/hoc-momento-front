@@ -3,23 +3,21 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import {MdArrowBackIosNew, MdOutlineArrowForwardIos} from "react-icons/md"
 
-const CarouselComp = ({gallery, autoplay}) => {
-
-  console.log(gallery);
+const CarouselComp = ({gallery}) => {
 
   return (
     <div className='carousel-comp-main'>
 
       <Carousel
-          interval={7000}
           className="carousel"
           navButtonsAlwaysVisible={true}
           PrevIcon={<MdArrowBackIosNew/>}
           NextIcon={<MdOutlineArrowForwardIos/>}
-          autoPlay={autoplay}
+          autoPlay={false}
+          indicators={false}
           >
             {
-                gallery.map( (item, i) => <Item key={i} item={item.image ? item.image : item} /> )
+                gallery.map( (item, i) => <Item key={i} item={item} /> )
             }
         </Carousel>
       
@@ -29,11 +27,11 @@ const CarouselComp = ({gallery, autoplay}) => {
 
 export default CarouselComp;
 
-function Item(props)
+function Item({item})
 {
     return (
         <Paper className='paper-carousel'>
-          {/* <img src={props.item} /> */}
+          <img src={item} />
         </Paper>
     )
 }

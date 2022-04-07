@@ -199,6 +199,17 @@
     .popover .popover-list li {
       white-space: nowrap; }
 
+.carousel-comp-main {
+  width: 70vw;
+  height: 75vh; }
+  .carousel-comp-main .carousel .paper-carousel {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .carousel-comp-main .carousel .paper-carousel img {
+      object-fit: cover; }
+
 .lines1 {
   height: 100%;
   position: relative; }
@@ -400,7 +411,6 @@
   overflow: hidden;
   opacity: 0;
   transition: z-index 0s 0.8s, opacity 0.4s 0.4s  ease-in-out;
-  overflow: auto;
   scroll-behavior: initial !important; }
   .modal .section-profil {
     margin: 0 !important; }
@@ -656,7 +666,8 @@
 
 body {
   margin: 0 !important;
-  font-family: 'Josefin Sans', sans-serif !important; }
+  font-family: 'Josefin Sans', sans-serif !important;
+  max-width: 100vw; }
 
 button {
   font-family: 'Josefin Sans', sans-serif !important; }

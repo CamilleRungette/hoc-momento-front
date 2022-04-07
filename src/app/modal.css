@@ -10,7 +10,6 @@
   overflow: hidden;
   opacity: 0;
   transition: z-index 0s 0.8s, opacity 0.4s 0.4s  ease-in-out;
-  overflow: auto;
   scroll-behavior: initial !important; }
   .modal .section-profil {
     margin: 0 !important; }
