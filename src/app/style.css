@@ -606,7 +606,8 @@
   margin-top: 100px;
   padding: 4rem 4rem 0 4rem;
   position: relative;
-  width: 90%; }
+  width: 90%;
+  min-height: 70vh; }
   .show-main .show-title {
     text-align: center; }
   .show-main .carousel .photos-line {
