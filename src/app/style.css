@@ -504,9 +504,15 @@
     border: 2px solid blue; }
   .modal .close-button {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 1rem;
+    right: 1rem;
     z-index: 2; }
+    .modal .close-button .icon {
+      font-size: 34px;
+      transition-duration: .5s; }
+      .modal .close-button .icon:hover {
+        color: grey;
+        transition-duration: .5s; }
   .modal .center {
     width: auto;
     z-index: 1;
@@ -537,7 +543,9 @@
     z-index: -1; }
   .modal #modal-content {
     background-color: white;
-    padding: 40px; }
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 4px 16px 18px -2px rgba(71, 71, 71, 0.4); }
   .modal #confirm-content {
     background-color: white;
     padding: 20px; }
@@ -675,6 +683,22 @@
   .end-lines .show-lines2 {
     height: 70px;
     width: 55%; }
+
+.carousel-comp-main {
+  height: 80vh;
+  width: 60vw;
+  text-align: center; }
+
+.paper-carousel {
+  height: 80vh;
+  width: 90%;
+  margin: auto;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .paper-carousel img {
+    object-fit: contain; }
 
 body {
   margin: 0 !important;

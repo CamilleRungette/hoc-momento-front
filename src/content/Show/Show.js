@@ -1,10 +1,8 @@
 import React, {useEffect, useState, useRef} from 'react';
-import {Navbar, Footer, url, Lines1, Lines3, BasicModal} from "./_index";
+import {Navbar, Footer, url, Lines1, Lines3, BasicModal, CarouselComp } from "./_index";
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { BsDownload } from "react-icons/bs";
-import Carousel from 'react-material-ui-carousel';
-import { Paper, Button } from '@mui/material';
 
 
 const Show = () => {
@@ -31,22 +29,10 @@ const Show = () => {
     })
   }, [id]);
 
-  var items = [
-    {
-        name: "Random Name #1",
-        description: "Probably the most random thing you have ever seen!"
-    },
-    {
-        name: "Random Name #2",
-        description: "Hello World!"
-    }
-]
-
-const modal = () => {
+const showModal = () => {
   modalRef.current.showModal()
 }
 
-console.log(show);
 
   return (
     <div>
@@ -63,18 +49,9 @@ console.log(show);
         <div className='carousel'>
           <ul className='photos-line no-list-style'>
             {show.gallery.map(photo => (
-              <li><img src={photo} alt={show.title} className="photo" /></li>
+              <li><img src={photo} alt={show.title} className="photo pointer" onClick={showModal} /></li>
             ))}
           </ul>
-
-        {/* <Carousel
-          NextIcon={<BsDownload/>}
-          PrevIcon={<BsDownload/>}>
-            {
-                items.map( (item, i) => <Item key={i} item={item} /> )
-            }
-        </Carousel> */}
-
         </div>
 
         <div className='show-description' dangerouslySetInnerHTML={{__html:show?.description}}>
@@ -102,23 +79,9 @@ console.log(show);
         </div>
       </div>
       <Footer/>
-      <BasicModal ref={modalRef} content={<h1> Helllo</h1>} />
+      <BasicModal ref={modalRef} content={<CarouselComp gallery={show.gallery} autoplay={false} />} />
     </div>
   )
 }
 
 export default Show;
-
-function Item(props)
-{
-    return (
-        <Paper>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
-
-            <Button className="CheckButton">
-                Check it out!
-            </Button>
-        </Paper>
-    )
-}

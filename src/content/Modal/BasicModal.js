@@ -1,5 +1,6 @@
 import React, {useState, useMemo, forwardRef, useImperativeHandle} from "react";
-import {GrClose} from 'react-icons/gr';
+import {AiOutlineClose} from "react-icons/ai";
+import {MdOutlineClose} from "react-icons/md";
 
 
 const BasicModal = forwardRef(({content}, ref) => {
@@ -35,7 +36,7 @@ const BasicModal = forwardRef(({content}, ref) => {
 		<div className={`${modalConfig.class}`}>
 			<div className="container-relative ">
 				<div id="modal-content" className="center gx-card-widget gx-card-profile-sm">
-						<button className="btn-no-style close-button" onClick={closeModal}> <GrClose className="icon-hover" style={{fontSize:"38px"}} /> </button>
+						<button className="btn-no-style close-button pointer" onClick={closeModal}> <MdOutlineClose className="icon" /> </button>
 						{modalConfig.content}
 				</div>
 				<div className="close-div" onClick={(e) => closeModal(e)}></div>
