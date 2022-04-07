@@ -1,18 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import {Navbar, Footer, url, Lines1, Lines2, Lines3} from "./_index";
+import React, {useEffect, useState, useRef} from 'react';
+import {Navbar, Footer, url, Lines1, Lines3, BasicModal} from "./_index";
 import { useParams } from 'react-router';
 import axios from 'axios';
-import { BsDownload } from "react-icons/bs"
+import { BsDownload } from "react-icons/bs";
+import Carousel from 'react-material-ui-carousel';
+import { Paper, Button } from '@mui/material';
+
 
 const Show = () => {
 
   const id = useParams();
+  const modalRef = useRef();
 
   const [show, setShow] = useState({
     title: "",
     description: "",
     links: []
-  })
+  });
 
   useEffect(() => {
     axios.get(`${url}/show`, {
@@ -24,9 +28,24 @@ const Show = () => {
     .catch(err => {
       console.log(err);
     })
-  }, [id])
+  }, [id]);
 
-  console.log(show);
+  var items = [
+    {
+        name: "Random Name #1",
+        description: "Probably the most random thing you have ever seen!"
+    },
+    {
+        name: "Random Name #2",
+        description: "Hello World!"
+    }
+]
+
+const modal = () => {
+  modalRef.current.showModal()
+}
+
+console.log(show);
 
   return (
     <div>
@@ -40,13 +59,24 @@ const Show = () => {
           <h1>{show?.title} </h1>
         </div>
 
-        <div>
+        <div className='carousel'>
+          <ul className='photos-line no-list-style'>
+            {show.gallery.map(photo => (
+              <li><img src={photo} alt={show.title} className="photo" /></li>
+            ))}
+          </ul>
+
+        {/* <Carousel
+          NextIcon={<BsDownload/>}
+          PrevIcon={<BsDownload/>}>
+            {
+                items.map( (item, i) => <Item key={i} item={item} /> )
+            }
+        </Carousel> */}
 
         </div>
 
         <div className='show-description' dangerouslySetInnerHTML={{__html:show?.description}}>
-          {/* <div>
-            {show.description} */}
         </div>
 
         <div className='links'>
@@ -71,9 +101,23 @@ const Show = () => {
         </div>
       </div>
       <Footer/>
+      <BasicModal ref={modalRef} content={<h1> Helllo</h1>} />
     </div>
   )
 }
 
 export default Show;
 
+function Item(props)
+{
+    return (
+        <Paper>
+            <h2>{props.item.name}</h2>
+            <p>{props.item.description}</p>
+
+            <Button className="CheckButton">
+                Check it out!
+            </Button>
+        </Paper>
+    )
+}

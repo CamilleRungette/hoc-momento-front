@@ -5,6 +5,11 @@
   padding-left: 0;
 };
 
+.btn-no-style{
+  border: none;
+  background-color: transparent;
+}
+
 .flex-space-between{
   display: flex;
   justify-content: space-between;
