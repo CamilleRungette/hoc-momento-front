@@ -21,12 +21,13 @@
       text-align: center;
       margin-left: 1%;
       margin-right: 1%;
-      height: 150px;
+      height: 130px;
       padding: .5rem; }
       .show-main .carousel .photos-line li img {
         object-fit: contain;
         margin: auto;
-        transition-duration: .5s; }
+        transition-duration: .5s;
+        height: 100%; }
   .show-main .show-lines1 {
     height: 70px;
     width: 55%;

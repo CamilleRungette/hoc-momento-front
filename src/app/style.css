@@ -210,6 +210,8 @@
     width: 99vw;
     height: 90vh;
     position: relative; }
+    .carousel-main .carousel-div .carousel-item {
+      width: 100%; }
     .carousel-main .carousel-div .text {
       position: absolute;
       top: 45vh;
@@ -369,6 +371,8 @@
           width: 9rem;
           position: absolute;
           bottom: -10rem; }
+          .home-footer-main .links .link-part .inside .div-logo img {
+            width: 100%; }
   .home-footer-main .footer-home-list li {
     margin-bottom: 1rem; }
   .home-footer-main .footer-home-list .network-icon {
@@ -596,6 +600,8 @@
       .company-main .top .left .picture-div {
         width: 100%;
         margin-top: 50px; }
+        .company-main .top .left .picture-div img {
+          width: 100%; }
     .company-main .top .right {
       width: 57%;
       padding-left: 2rem; }
@@ -630,12 +636,13 @@
       text-align: center;
       margin-left: 1%;
       margin-right: 1%;
-      height: 150px;
+      height: 130px;
       padding: .5rem; }
       .show-main .carousel .photos-line li img {
         object-fit: contain;
         margin: auto;
-        transition-duration: .5s; }
+        transition-duration: .5s;
+        height: 100%; }
   .show-main .show-lines1 {
     height: 70px;
     width: 55%;
@@ -675,9 +682,6 @@ body {
 
 button {
   font-family: 'Josefin Sans', sans-serif !important; }
-
-img {
-  height: 100%; }
 
 p {
   font-size: 16px; }

@@ -24,7 +24,11 @@
         .div-logo{
           width: 9rem;
           position: absolute;
-          bottom: -10rem
+          bottom: -10rem;
+
+          img{
+            width: 100%
+          }
         }
       }
     }

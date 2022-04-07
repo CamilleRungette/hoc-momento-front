@@ -26,13 +26,14 @@
         text-align: center;
         margin-left: 1%;
         margin-right: 1%;
-        height: 150px;
+        height: 130px;
         padding: .5rem;
 
         img{
           object-fit: contain;
           margin: auto;
           transition-duration: .5s;
+          height: 100%;
         }
       }
     }

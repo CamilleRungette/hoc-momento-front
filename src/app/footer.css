@@ -19,6 +19,8 @@
           width: 9rem;
           position: absolute;
           bottom: -10rem; }
+          .home-footer-main .links .link-part .inside .div-logo img {
+            width: 100%; }
   .home-footer-main .footer-home-list li {
     margin-bottom: 1rem; }
   .home-footer-main .footer-home-list .network-icon {

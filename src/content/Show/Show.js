@@ -15,7 +15,8 @@ const Show = () => {
   const [show, setShow] = useState({
     title: "",
     description: "",
-    links: []
+    links: [],
+    gallery: []
   });
 
   useEffect(() => {

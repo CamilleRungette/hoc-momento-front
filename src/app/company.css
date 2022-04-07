@@ -12,6 +12,8 @@
       .company-main .top .left .picture-div {
         width: 100%;
         margin-top: 50px; }
+        .company-main .top .left .picture-div img {
+          width: 100%; }
     .company-main .top .right {
       width: 57%;
       padding-left: 2rem; }
