@@ -13,7 +13,7 @@ console.log(gallery);
           navButtonsAlwaysVisible={true}
           PrevIcon={<MdArrowBackIosNew/>}
           NextIcon={<MdOutlineArrowForwardIos/>}
-          autoPlay={false}
+          autoPlay={true}
           indicators={false}
           >
             {
