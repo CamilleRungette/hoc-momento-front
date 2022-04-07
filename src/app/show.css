@@ -60,19 +60,3 @@
   .end-lines .show-lines2 {
     height: 70px;
     width: 55%; }
-
-.carousel-comp-main {
-  height: 80vh;
-  width: 60vw;
-  text-align: center; }
-
-.paper-carousel {
-  height: 80vh;
-  width: 90%;
-  margin: auto;
-  box-shadow: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .paper-carousel img {
-    object-fit: contain; }

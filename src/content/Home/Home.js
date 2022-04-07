@@ -1,6 +1,6 @@
 import React from 'react';
 import { CarouselData } from './Carousel/CarouselData';
-import {Carousel, Lines1, Lines2, HomeFooter, NavbarHome} from "./_index";
+import {Carousel, Lines1, Lines2, HomeFooter, NavbarHome, CarouselComp} from "./_index";
 
 
 const Home = () => {
@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <div className='home-main'>
       <NavbarHome />
-      <div className='carousel-div'>
-        <Carousel slides={CarouselData} />
+      <div className='carousel-home-div'>
+        <Carousel gallery={CarouselData} />
       </div>
 
       <div className='home-lines1'>

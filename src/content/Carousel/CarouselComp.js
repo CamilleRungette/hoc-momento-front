@@ -1,12 +1,11 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { Paper, Button } from '@mui/material';
-import { BsDownload } from "react-icons/bs";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-
+import { Paper } from '@mui/material';
+import {MdArrowBackIosNew, MdOutlineArrowForwardIos} from "react-icons/md"
 
 const CarouselComp = ({gallery, autoplay}) => {
+
+  console.log(gallery);
 
   return (
     <div className='carousel-comp-main'>
@@ -15,12 +14,12 @@ const CarouselComp = ({gallery, autoplay}) => {
           interval={7000}
           className="carousel"
           navButtonsAlwaysVisible={true}
-          PrevIcon={<FiArrowLeft/>}
-          NextIcon={<FiArrowRight/>}
+          PrevIcon={<MdArrowBackIosNew/>}
+          NextIcon={<MdOutlineArrowForwardIos/>}
           autoPlay={autoplay}
           >
             {
-                gallery.map( (item, i) => <Item key={i} item={item} /> )
+                gallery.map( (item, i) => <Item key={i} item={item.image ? item.image : item} /> )
             }
         </Carousel>
       
@@ -34,7 +33,7 @@ function Item(props)
 {
     return (
         <Paper className='paper-carousel'>
-          <img src={props.item} />
+          {/* <img src={props.item} /> */}
         </Paper>
     )
 }
