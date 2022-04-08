@@ -1,5 +1,5 @@
 import React from "react";
-import {Company, Home, Agenda, Show} from "./_index.js";
+import {Company, Home, Agenda, Show, CulturalActions} from "./_index.js";
 import {
   BrowserRouter,
   Routes,
@@ -16,6 +16,7 @@ const MainApp = () => {
         <Route path="/compagnie" element={<Company/>} />
         <Route path="/agenda" element={<Agenda/>} />
         <Route path="/spectacle/:id" element={<Show/>} />
+        <Route path="/action-culturelle/:id" element={<CulturalActions/>} />
       </Routes>
 
     </BrowserRouter>

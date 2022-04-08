@@ -24,7 +24,7 @@ const Navbar = () => {
     .then(res => {
       let content = <ul className='no-list-style menu-list popover-list'>
       {res.data.map(action => (
-        <li key={action._id} className='pointer'><Link to={`/actions/${action._id}`}>{action.place}</Link></li>
+        <li key={action._id} className='pointer'><Link to={`/action-culturelle/${action._id}`}>{action.place}</Link></li>
       ))}
       </ul>
       setActionsContent(content)

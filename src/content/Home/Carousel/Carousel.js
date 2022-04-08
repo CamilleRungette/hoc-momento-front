@@ -4,7 +4,6 @@ import { Paper } from '@mui/material';
 import {MdArrowBackIosNew, MdOutlineArrowForwardIos} from "react-icons/md"
 
 const CarouselComp = ({gallery}) => {
-console.log(gallery);
   return (
     <div>
       <Carousel

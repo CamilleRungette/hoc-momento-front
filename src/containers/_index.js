@@ -5,3 +5,4 @@ export {default as NavbarHome} from "../content/Navbar/NavbarHome";
 export {default as Navbar} from "../content/Navbar/Navbar";
 export {default as Footer} from "../content/Footer/Footer";
 export {default as Show} from "../content/Show/Show";
+export {default as CulturalActions} from "../content/CulturalActions/CulturalActions";
