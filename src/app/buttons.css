@@ -18,14 +18,13 @@
   background-color: white;
   border: 1px solid #3e79bc;
   color: #3e79bc;
-  padding: 2% 5%;
+  padding: 6px 7px;
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
-  min-width: 150px;
   cursor: pointer;
-  transition-duration: 1s; }
+  transition-duration: .5s; }
   .primary-button-outline:hover {
     background-color: #3e79bc;
     color: white;
-    transition-duration: 1s; }
+    transition-duration: .5s; }

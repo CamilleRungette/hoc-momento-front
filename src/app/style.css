@@ -56,17 +56,16 @@
   background-color: white;
   border: 1px solid #3e79bc;
   color: #3e79bc;
-  padding: 2% 5%;
+  padding: 6px 7px;
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
-  min-width: 150px;
   cursor: pointer;
-  transition-duration: 1s; }
+  transition-duration: .5s; }
   .primary-button-outline:hover {
     background-color: #3e79bc;
     color: white;
-    transition-duration: 1s; }
+    transition-duration: .5s; }
 
 .navbar-main {
   border-bottom: 2px solid #3e79bc;
@@ -507,7 +506,8 @@
     background-color: white;
     padding: 3rem;
     border-radius: 10px;
-    box-shadow: 4px 16px 18px -2px rgba(71, 71, 71, 0.4); }
+    box-shadow: 4px 16px 18px -2px rgba(71, 71, 71, 0.4);
+    max-width: 80%; }
   .modal #confirm-content {
     background-color: white;
     padding: 20px; }
@@ -742,17 +742,42 @@
     margin-left: 4rem; }
   .agenda-main .future-events .event {
     width: 40%;
-    margin: auto; }
+    margin: auto;
+    padding-top: 14px;
+    padding-bottom: 14px; }
+    .agenda-main .future-events .event .event-div {
+      width: 50%;
+      margin: auto;
+      position: relative; }
+    .agenda-main .future-events .event .span-link {
+      text-decoration: underline;
+      color: #3e79bc;
+      font-weight: bold; }
+      .agenda-main .future-events .event .span-link:hover {
+        text-decoration: none; }
     .agenda-main .future-events .event:not(:first-child) {
       border-top: solid 1px #3e79bc; }
-    .agenda-main .future-events .event .event-div {
-      width: 45%;
-      margin: auto; }
+      .agenda-main .future-events .event:not(:first-child) .see-more {
+        position: absolute;
+        top: 1rem;
+        right: 1rem; }
+    .agenda-main .future-events .event:first-child .see-more {
+      position: absolute;
+      right: 1rem; }
   .agenda-main .future-events .event-month {
     font-weight: 10; }
   .agenda-main .future-events .event-name {
     text-transform: uppercase;
     font-size: 18px; }
+  .agenda-main .future-events .event-description {
+    width: 30rem;
+    padding: 1rem; }
+    .agenda-main .future-events .event-description .picture {
+      width: 20rem;
+      margin: auto;
+      margin-bottom: 30px; }
+      .agenda-main .future-events .event-description .picture img {
+        width: 100%; }
 
 body {
   margin: 0 !important;

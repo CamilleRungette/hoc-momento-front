@@ -19,24 +19,64 @@
     .event{
       width: 40%;
       margin: auto; 
+      padding-top: 14px;
+      padding-bottom: 14px;
+
+      .event-div{
+        width: 50%;
+        margin: auto;
+        position: relative;
+      };
+
+      .span-link{
+        text-decoration: underline;
+        color: $primary ;
+        font-weight: bold;
+
+        &:hover{
+          text-decoration: none;
+        };
+      };
 
       &:not(:first-child){
         border-top: solid 1px $primary ;
+        .see-more{
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+        };
       };
 
-      .event-div{
-        width: 45%;
-        margin: auto;
+      &:first-child{
+        .see-more{
+          position: absolute;
+          right: 1rem;
+        };
       }
     }
 
     .event-month{
       font-weight: 10;
-    }
+    };
 
     .event-name{
       text-transform: uppercase;
       font-size: 18px;
+    };
+
+    .event-description{
+      width: 30rem;
+      padding: 1rem;
+
+      .picture{
+        width: 20rem;
+        margin: auto;
+        margin-bottom: 30px;
+        img{
+          width: 100%;
+        }
+
+      }
     }
   }
 }

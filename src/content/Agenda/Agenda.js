@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {Navbar, Footer, url, Lines1, Lines2, Lines3} from "./_index.js";
+import React, {useEffect, useState, useRef} from 'react';
+import {Navbar, Footer, url, Lines3, BasicModal, Event} from "./_index.js";
 import axios from 'axios';
 
 const Agenda = () => {
 
+  const modalRef = useRef();
   const [events, setEvents] = useState([]);
   const date = new Date();
   // const year = date.getFullYear();
@@ -21,12 +22,17 @@ const Agenda = () => {
     })
   },[]);
 
-events.map(event => {
-  if (new Date(event.show[0].startDate).getFullYear() == year ){
-    // console.log(new Date(event.show[0].startDate).getMonth());
-    console.log(event);
+  events.map(event => {
+    if (new Date(event.show[0].startDate).getFullYear() == year ){
+      // console.log(new Date(event.show[0].startDate).getMonth());
+      console.log(event);
+    };
+  });
+
+  const showModal = () => {
+    modalRef.current.showModal();
   };
-})
+
   return (
     <div>
       <Navbar />
@@ -44,26 +50,7 @@ events.map(event => {
             {events.map(event => (
               new Date(event.show[0].startDate).getFullYear() == year ?(
                 <li key={event._id} className="event" >
-                  <div className='event-div'>
-                    <h2 className='event-month'>{months[new Date(event.show[0].startDate).getMonth() +1]} {year} </h2>
-                    <p>
-                      {new Date(event.show[0].startDate).getDate() === new Date(event.show[0].endDate).getDate() ?
-                        <span>Le {new Date(event.show[0].startDate).getDate()} {months[new Date(event.show[0].startDate).getMonth() +1]} </span>
-                      : 
-                      <span>
-                        Du {new Date(event.show[0].startDate).getDate()} 
-                          {new Date(event.show[0].startDate).getMonth() !== new Date(event.show[0].endDate).getMonth() ? (
-                          <span> {months[new Date(event.show[0].startDate).getMonth() +1]} </span>
-                          ):( <> </>)}
-                        au {new Date(event.show[0].endDate).getDate()} {months[new Date(event.show[0].endDate).getMonth() +1]}
-                      </span>}
-                    </p>
-
-                    <h2 className='event-name'>{event.title}</h2> 
-                
-                    {event.place ? <p>{event.show[0].place} </p> :  <></>}
-                    <p>{event.show[0].address ? <span>{event.show[0].address},</span> : <></>} {event.show[0].city ? event.show[0].city : <></>}</p>
-                  </div>
+                  <Event event={event} />
                 </li>
               ):( 
               <></>)
@@ -75,7 +62,6 @@ events.map(event => {
         <div className='past-events'>
 
         </div>
-
       </div>
       <Footer/>
     </div>
