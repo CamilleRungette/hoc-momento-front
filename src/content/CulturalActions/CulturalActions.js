@@ -22,7 +22,6 @@ const CulturalAction = () => {
       params: id
     })
     .then(res => {
-      console.log(res);
       setAction(res.data);
     })
     .catch(err => {

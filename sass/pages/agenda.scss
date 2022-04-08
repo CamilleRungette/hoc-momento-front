@@ -1,0 +1,42 @@
+@import "../commons/colors.scss";
+
+.agenda-main{
+  min-height: 80vh;
+  padding: 3rem;
+
+  .agenda-title{
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .agenda-lines1{
+    height: 80px;
+    width: 60%;
+    margin-left: 4rem;
+  };
+
+  .future-events{
+    .event{
+      width: 40%;
+      margin: auto; 
+
+      &:not(:first-child){
+        border-top: solid 1px $primary ;
+      };
+
+      .event-div{
+        width: 45%;
+        margin: auto;
+      }
+    }
+
+    .event-month{
+      font-weight: 10;
+    }
+
+    .event-name{
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+  }
+}

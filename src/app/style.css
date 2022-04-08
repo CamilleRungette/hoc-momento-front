@@ -730,6 +730,30 @@
     height: 70px;
     width: 55%; }
 
+.agenda-main {
+  min-height: 80vh;
+  padding: 3rem; }
+  .agenda-main .agenda-title {
+    text-align: center;
+    margin-top: 80px; }
+  .agenda-main .agenda-lines1 {
+    height: 80px;
+    width: 60%;
+    margin-left: 4rem; }
+  .agenda-main .future-events .event {
+    width: 40%;
+    margin: auto; }
+    .agenda-main .future-events .event:not(:first-child) {
+      border-top: solid 1px #3e79bc; }
+    .agenda-main .future-events .event .event-div {
+      width: 45%;
+      margin: auto; }
+  .agenda-main .future-events .event-month {
+    font-weight: 10; }
+  .agenda-main .future-events .event-name {
+    text-transform: uppercase;
+    font-size: 18px; }
+
 body {
   margin: 0 !important;
   font-family: 'Josefin Sans', sans-serif !important;
