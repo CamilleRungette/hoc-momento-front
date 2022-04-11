@@ -22,20 +22,55 @@
           margin-bottom: 0; }
         .home-main .carousel-home-div .paper-carousel .text .subtitle {
           font-size: 40px; }
+        @media screen and (max-width: 1500px) {
+          .home-main .carousel-home-div .paper-carousel .text .title {
+            font-size: 80px; } }
+        @media screen and (max-width: 900px) {
+          .home-main .carousel-home-div .paper-carousel .text .title {
+            font-size: 60px; }
+          .home-main .carousel-home-div .paper-carousel .text .subtitle {
+            font-size: 30px; } }
   .home-main .home-lines1 {
     width: 60%;
     height: 80px;
     margin-left: 10%;
     margin-top: 3rem;
     margin-bottom: 8rem; }
+    @media screen and (max-width: 1400px) {
+      .home-main .home-lines1 {
+        width: 70%;
+        height: 70px;
+        margin-left: 7%; } }
+    @media screen and (max-width: 700px) {
+      .home-main .home-lines1 {
+        width: 80%;
+        height: 60px; } }
   .home-main .quote {
-    text-align: center; }
+    text-align: center;
+    width: 95%;
+    margin: auto; }
     .home-main .quote p {
       font-size: 26px;
       color: #3e79bc; }
+      @media screen and (max-width: 1200px) {
+        .home-main .quote p {
+          font-size: 22px; } }
+    @media screen and (max-width: 700px) {
+      .home-main .quote {
+        width: 90%; }
+        .home-main .quote p {
+          font-size: 18px; } }
   .home-main .home-lines2 {
     width: 40%;
     height: 80px;
     margin-top: 5rem;
     margin-left: auto;
     margin-right: 10%; }
+    @media screen and (max-width: 1400px) {
+      .home-main .home-lines2 {
+        margin-right: 7%;
+        height: 70px; } }
+    @media screen and (max-width: 900px) {
+      .home-main .home-lines2 {
+        width: 60%;
+        height: 60px; } }

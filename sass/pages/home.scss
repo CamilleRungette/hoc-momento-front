@@ -25,17 +25,36 @@
         text-align: center;
         color: white;
 
+        
         .title{
           font-size: 100px;
           color: white;
           margin-bottom: 0
         };
-
+        
         .subtitle{
           font-size: 40px;
         };
+
+        @media screen and (max-width: 1500px){
+          .title{
+            font-size: 80px;
+          };
+        };
+
+        @media screen and (max-width: 900px){
+          .title{
+            font-size: 60px;
+          };
+
+          .subtitle{
+            font-size: 30px
+          }
+        };
       };
     };
+
+   
   };
 
   .home-lines1{
@@ -44,15 +63,40 @@
     margin-left: 10%;
     margin-top: 3rem;
     margin-bottom: 8rem;
+    
+    @media screen and (max-width: 1400px){
+      width: 70%;
+      height: 70px;
+      margin-left: 7%;
+    };
+
+    @media screen and (max-width: 700px){
+      width: 80%;
+      height: 60px;
+    };
   };
 
   .quote{
     text-align: center;
+    width: 95%;
+    margin: auto;
 
     p{
       font-size: 26px;
-      color: $primary
-    }
+      color: $primary;
+
+      @media screen and (max-width: 1200px){
+        font-size: 22px;
+      };
+    };
+
+    @media screen and (max-width: 700px){
+      width: 90%;
+
+      p{
+        font-size: 18px;
+      };
+    };
   };
 
   .home-lines2{
@@ -60,6 +104,17 @@
     height: 80px;
     margin-top: 5rem;;
     margin-left: auto;
-    margin-right: 10%
+    margin-right: 10%;
+
+    @media screen and (max-width: 1400px){
+      margin-right: 7%;
+      height: 70px;
+    };
+    
+    @media screen and (max-width: 900px){
+      width: 60%;
+      height: 60px;
+    };
+
   };
 };
