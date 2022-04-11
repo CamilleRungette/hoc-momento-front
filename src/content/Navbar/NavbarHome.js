@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { url } from "./_index.js"
+import { url } from "./_index.js";
+import { FiMenu } from "react-icons/fi";
 
 const NavbarHome = () => {
 
@@ -36,7 +37,7 @@ const NavbarHome = () => {
       </ul>
       setActionsContent(content)
     });
-  },[])
+  },[]);
 
   const changeBackground = () => {
     if (window.scrollY > 900){
@@ -66,6 +67,12 @@ const NavbarHome = () => {
     pop.style.display = "none";
   };
 
+  const openMenu = () => {
+    let pop = document.getElementById('menu');
+    pop.style.display = pop.style.display === "none" ? "block" : "none";
+    console.log("hello");
+  }
+
   return (
     <div className={navbarStyle ? "navbar-main" : "navbar-home"}>
       <div className='logo-div'>
@@ -87,6 +94,14 @@ const NavbarHome = () => {
         </li>
         <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
       </ul>
+      <div className='menu-icon-div popover-div' onClick={openMenu}><FiMenu className='menu-icon pointer' /> 
+        <div id="menu" className='popover popover-menu'> 
+          <ul className='no-list-style'>
+            <li className='pointer'><Link className='link' to="/compagnie">Compagnie </Link></li> 
+            <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
+          </ul>
+        </div>
+      </div>
     </div>
   )
 }; 
