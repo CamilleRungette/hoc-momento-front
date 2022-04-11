@@ -1,5 +1,5 @@
 .agenda-main {
-  min-height: 80vh;
+  min-height: 75vh;
   padding: 3rem; }
   .agenda-main .agenda-title {
     text-align: center;
@@ -46,3 +46,25 @@
       margin-bottom: 30px; }
       .agenda-main .future-events .event-description .picture img {
         width: 100%; }
+  .agenda-main .past-events {
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem; }
+    .agenda-main .past-events .accordion {
+      box-shadow: none;
+      border-radius: 0; }
+      .agenda-main .past-events .accordion h3 {
+        margin: 0;
+        font-weight: lighter; }
+      .agenda-main .past-events .accordion .icon {
+        font-size: 30px; }
+      .agenda-main .past-events .accordion .event-details h2 {
+        font-size: 16px;
+        font-weight: 900;
+        margin: 0; }
+      .agenda-main .past-events .accordion .event-details .event-date {
+        margin-left: 20px;
+        display: flex;
+        justify-content: space-between; }
+        .agenda-main .past-events .accordion .event-details .event-date p {
+          width: 30%; }

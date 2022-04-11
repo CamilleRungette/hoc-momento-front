@@ -1,7 +1,7 @@
 @import "../commons/colors.scss";
 
 .agenda-main{
-  min-height: 80vh;
+  min-height: 75vh;
   padding: 3rem;
 
   .agenda-title{
@@ -74,9 +74,45 @@
         margin-bottom: 30px;
         img{
           width: 100%;
-        }
+        };
+      };
+    };
+  };
 
-      }
-    }
-  }
+  .past-events{
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+
+    .accordion{
+      box-shadow: none;
+      border-radius: 0;
+
+      h3{
+        margin: 0;
+        font-weight: lighter
+      };
+      .icon{
+        font-size:30px;
+      };
+
+      .event-details{
+        h2{
+          font-size: 16px;
+          font-weight: 900;
+          margin: 0;
+        };
+
+        .event-date{
+          margin-left: 20px;
+          display: flex;
+          justify-content: space-between;
+
+          p{
+            width: 30%;
+          };
+        };
+      };
+    };
+  };
 }

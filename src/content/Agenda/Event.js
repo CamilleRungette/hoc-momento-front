@@ -1,10 +1,9 @@
 import React, {useRef} from 'react';
 import { BasicModal } from './_index';
 
-const Event = ({event}) => {
+const Event = ({event, date}) => {
 
   const modalRef = useRef();
-  const date = new Date();
   // const year = date.getFullYear();
   const year = 2020;
   const month = date.getMonth();
