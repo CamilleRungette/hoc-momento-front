@@ -56,6 +56,33 @@
       };
     };
   };
+
+  .menu-icon-div{
+    display: flex;
+    align-self: center;
+    display: none;
+    margin-right: 20px;
+
+    .menu-icon{
+      color: white;
+      font-size: 30px; 
+      border-radius: 4px;
+       
+      &:hover{
+        background-color: rgba(192, 192, 192, .5);
+      };
+    };
+  };
+
+  @media screen and (max-width: 1000px) {
+    .navbar-list{
+      display: none;
+    }
+
+    .menu-icon-div{
+      display: block;
+    };
+  };
 };
 
 .navbar-home{
