@@ -19,36 +19,36 @@
 
       .text{
         position: absolute;
-        top: 35vh;
+        top: 45vh;
         left: 25vw;
         width: 50vw;
         text-align: center;
         color: white;
 
         
-        .title{
-          font-size: 90px;
-          color: white;
-          margin-bottom: 0
-        };
+        // .title{
+        //   font-size: 90px;
+        //   color: white;
+        //   margin-bottom: 0
+        // };
         
         .subtitle{
-          font-size: 40px;
+          font-size: 50px;
         };
 
-        @media screen and (max-width: 1500px){
-          .title{
-            font-size: 80px;
-          };
-        };
+        // @media screen and (max-width: 1500px){
+        //   .title{
+        //     font-size: 80px;
+        //   };
+        // };
 
         @media screen and (max-width: 900px){
-          .title{
-            font-size: 60px;
-          };
+          // .title{
+          //   font-size: 60px;
+          // };
 
           .subtitle{
-            font-size: 30px
+            font-size: 40px
           }
         };
       };
@@ -109,6 +109,7 @@
     @media screen and (max-width: 1400px){
       margin-right: 7%;
       height: 70px;
+      margin-bottom: 60px;
     };
     
     @media screen and (max-width: 900px){

@@ -5,7 +5,7 @@ const Event = ({event, date}) => {
 
   const modalRef = useRef();
   // const year = date.getFullYear();
-  const year = 2020;
+  const year = 2021;
   const month = date.getMonth();
   const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 

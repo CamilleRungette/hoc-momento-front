@@ -2,31 +2,31 @@ export const CarouselData = [
   {
     image: "/images/home1.jpg",
     title: "LA PARADE",
-    subtitle: "tricoteurs de liens",
+    subtitle: "Tricoteurs de Liens",
     color: "white"
   },
   {
     image: "/images/home2.jpg",
     title: "MAMA PEROLA",
-    subtitle: "scénographies immersives",
+    subtitle: "Scénographies Immersives",
     color: "white"
   },
   {
     image: "/images/home3.jpg",
     title: "LA PARADE",
-    subtitle: "actions culturelles térritoriales",
+    subtitle: "Actions culturelles territoriales",
     color: "white"
   },
   {
     image: "/images/home4.jpg",
     title: "MONTJOIE! SAINT-DENIS!",
-    subtitle: "internationale et pluridisciplinaire",
-    color: "black"
+    subtitle: "Internationale et Pluridisciplinaire",
+    color: "white"
   },
   {
     image: "/images/home5.jpg",
     title: "MONTJOIE! SAINT-DENIS!",
-    subtitle: "théâtre in situ",
+    subtitle: "Théâtre In Situ",
     color: "black"
   }
 ];

@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useState} from 'react';
 import {AiFillFacebook, AiOutlineInstagram, AiFillYoutube, AiOutlineMail} from "react-icons/ai";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -18,7 +18,6 @@ const HomeFooter = () => {
     email: "",
     message: ""
   });
-  const [errors, setErrors] = useState({});
   const [alert, setAlert] = useState({
     severity: 'success',
     message: ''

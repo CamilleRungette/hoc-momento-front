@@ -11,25 +11,16 @@
         object-fit: cover; }
       .home-main .carousel-home-div .paper-carousel .text {
         position: absolute;
-        top: 35vh;
+        top: 45vh;
         left: 25vw;
         width: 50vw;
         text-align: center;
         color: white; }
-        .home-main .carousel-home-div .paper-carousel .text .title {
-          font-size: 90px;
-          color: white;
-          margin-bottom: 0; }
         .home-main .carousel-home-div .paper-carousel .text .subtitle {
-          font-size: 40px; }
-        @media screen and (max-width: 1500px) {
-          .home-main .carousel-home-div .paper-carousel .text .title {
-            font-size: 80px; } }
+          font-size: 50px; }
         @media screen and (max-width: 900px) {
-          .home-main .carousel-home-div .paper-carousel .text .title {
-            font-size: 60px; }
           .home-main .carousel-home-div .paper-carousel .text .subtitle {
-            font-size: 30px; } }
+            font-size: 40px; } }
   .home-main .home-lines1 {
     width: 60%;
     height: 80px;
@@ -69,7 +60,8 @@
     @media screen and (max-width: 1400px) {
       .home-main .home-lines2 {
         margin-right: 7%;
-        height: 70px; } }
+        height: 70px;
+        margin-bottom: 60px; } }
     @media screen and (max-width: 900px) {
       .home-main .home-lines2 {
         width: 60%;

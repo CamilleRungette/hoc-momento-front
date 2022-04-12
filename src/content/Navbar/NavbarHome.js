@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { url } from "./_index.js";
@@ -9,6 +9,7 @@ const NavbarHome = () => {
   const [navbarStyle, setNavbarStyle] = useState(true);
   const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
   const [actionsContent, setActionsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
+  const [size, setSize] = useState([0, 0]);
 
   useEffect(() => {
     changeBackground();
@@ -38,6 +39,17 @@ const NavbarHome = () => {
       setActionsContent(content)
     });
   },[]);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  // console.log(size);
 
   const changeBackground = () => {
     if (window.scrollY > 900){
@@ -70,7 +82,6 @@ const NavbarHome = () => {
   const openMenu = () => {
     let pop = document.getElementById('menu');
     pop.style.display = pop.style.display === "none" ? "block" : "none";
-    console.log("hello");
   }
 
   return (
@@ -96,8 +107,9 @@ const NavbarHome = () => {
       </ul>
       <div className='menu-icon-div popover-div' onClick={openMenu}><FiMenu className='menu-icon pointer' /> 
         <div id="menu" className='popover popover-menu'> 
-          <ul className='no-list-style'>
+          <ul className='menu-list no-list-style'>
             <li className='pointer'><Link className='link' to="/compagnie">Compagnie </Link></li> 
+           
             <li className='pointer'><Link className='link' to="/agenda">Agenda </Link></li> 
           </ul>
         </div>

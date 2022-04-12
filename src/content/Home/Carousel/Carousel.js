@@ -32,7 +32,6 @@ function Item({item})
         <Paper className='paper-carousel'>
           <img src={item.image} />
           <div className='text'>
-            <h1 className='title' >{item.title}</h1>
             <p className='subtitle' style={{color: item.color}}>{item.subtitle} </p>
           </div>
         </Paper>

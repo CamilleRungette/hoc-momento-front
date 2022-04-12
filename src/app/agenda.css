@@ -1,5 +1,5 @@
 .agenda-main {
-  min-height: 75vh;
+  min-height: 80vh;
   padding: 3rem; }
   .agenda-main .agenda-title {
     text-align: center;
@@ -8,15 +8,40 @@
     height: 80px;
     width: 60%;
     margin-left: 4rem; }
+    @media screen and (max-width: 900px) {
+      .agenda-main .agenda-lines1 {
+        width: 80%;
+        height: 70px; } }
+    @media screen and (max-width: 450px) {
+      .agenda-main .agenda-lines1 {
+        width: 100%;
+        height: 60px;
+        margin-left: 0;
+        margin-bottom: 50px; } }
   .agenda-main .future-events .event {
     width: 40%;
     margin: auto;
     padding-top: 14px;
-    padding-bottom: 14px; }
+    padding-bottom: 14px;
+    min-width: 300px; }
     .agenda-main .future-events .event .event-div {
       width: 50%;
       margin: auto;
       position: relative; }
+      .agenda-main .future-events .event .event-div .event-month {
+        font-weight: 10; }
+      .agenda-main .future-events .event .event-div .event-name {
+        text-transform: uppercase;
+        font-size: 18px; }
+      .agenda-main .future-events .event .event-div .event-description {
+        width: 30rem;
+        padding: 1rem; }
+        .agenda-main .future-events .event .event-div .event-description .picture {
+          width: 20rem;
+          margin: auto;
+          margin-bottom: 30px; }
+          .agenda-main .future-events .event .event-div .event-description .picture img {
+            width: 100%; }
     .agenda-main .future-events .event .span-link {
       text-decoration: underline;
       color: #3e79bc;
@@ -32,20 +57,15 @@
     .agenda-main .future-events .event:first-child .see-more {
       position: absolute;
       right: 1rem; }
-  .agenda-main .future-events .event-month {
-    font-weight: 10; }
-  .agenda-main .future-events .event-name {
-    text-transform: uppercase;
-    font-size: 18px; }
-  .agenda-main .future-events .event-description {
-    width: 30rem;
-    padding: 1rem; }
-    .agenda-main .future-events .event-description .picture {
-      width: 20rem;
-      margin: auto;
-      margin-bottom: 30px; }
-      .agenda-main .future-events .event-description .picture img {
-        width: 100%; }
+    @media screen and (max-width: 1500px) {
+      .agenda-main .future-events .event .event-div {
+        width: 70%; } }
+    @media screen and (max-width: 1200px) {
+      .agenda-main .future-events .event .event-div {
+        width: 100%; } }
+  @media screen and (max-width: 450px) {
+    .agenda-main .future-events {
+      margin-bottom: 80px; } }
   .agenda-main .past-events {
     width: 80%;
     margin: auto;
@@ -60,11 +80,13 @@
         font-size: 30px; }
       .agenda-main .past-events .accordion .event-details h2 {
         font-size: 16px;
-        font-weight: 900;
-        margin: 0; }
+        font-weight: 900; }
       .agenda-main .past-events .accordion .event-details .event-date {
         margin-left: 20px;
         display: flex;
-        justify-content: space-between; }
+        justify-content: space-between;
+        flex-wrap: wrap; }
         .agenda-main .past-events .accordion .event-details .event-date p {
-          width: 30%; }
+          width: 30%;
+          min-width: 200px;
+          margin: 5px 0; }

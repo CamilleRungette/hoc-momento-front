@@ -6,10 +6,12 @@
     margin-bottom: 8px; }
   .home-footer-main .links {
     display: flex;
-    justify-content: center;
-    margin-bottom: 4rem; }
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    flex-wrap: wrap; }
     .home-footer-main .links .link-part {
       width: 33%;
+      min-width: 300px;
       text-align: center; }
       .home-footer-main .links .link-part .inside {
         display: inline-block;
@@ -18,9 +20,31 @@
         .home-footer-main .links .link-part .inside .div-logo {
           width: 9rem;
           position: absolute;
-          bottom: -10rem; }
+          bottom: -10rem;
+          left: -4px; }
           .home-footer-main .links .link-part .inside .div-logo img {
             width: 100%; }
+    @media screen and (max-width: 1020px) {
+      .home-footer-main .links .link-part {
+        margin-bottom: 80px; }
+        .home-footer-main .links .link-part h2 {
+          text-align: center; }
+        .home-footer-main .links .link-part .inside .div-logo {
+          position: absolute;
+          top: 210px;
+          left: 10px;
+          width: 6rem; } }
+    @media screen and (max-width: 700px) {
+      .home-footer-main .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+        .home-footer-main .links .link-part {
+          width: 70%;
+          margin: auto;
+          margin-bottom: 50px; }
+          .home-footer-main .links .link-part .inside .div-logo {
+            display: none; } }
   .home-footer-main .footer-home-list li {
     margin-bottom: 1rem; }
   .home-footer-main .footer-home-list .network-icon {
@@ -42,14 +66,17 @@
     width: 70%;
     margin: auto; }
     .home-footer-main .contact-form .contact-input {
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      min-width: 250px; }
   .home-footer-main .supports-partners {
     border-top: 1px black solid;
     border-bottom: 1px black solid;
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    flex-wrap: wrap; }
     .home-footer-main .supports-partners .footer-logo {
-      max-width: 100px;
+      width: 100px;
+      min-width: 50px;
       padding-top: 3rem;
       padding-bottom: 2rem; }
       .home-footer-main .supports-partners .footer-logo img {

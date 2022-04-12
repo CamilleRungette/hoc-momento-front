@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { url } from "./_index.js"
@@ -8,6 +8,7 @@ const Navbar = () => {
 
   const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
   const [actionsContent, setActionsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
+  const [size, setSize] = useState([0, 0]);
 
   useEffect(() => {
     axios.get(`${url}/shows`)
@@ -30,6 +31,18 @@ const Navbar = () => {
       setActionsContent(content)
     });
   }, []);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  console.log(size);
+
 
   const showPopoverShows = () => {
     let pop = document.getElementById('popover-shows');

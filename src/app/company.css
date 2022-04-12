@@ -1,26 +1,58 @@
 .company-main {
   margin-top: 100px;
-  padding: 3rem 4rem; }
-  .company-main .top {
-    display: flex;
-    margin-top: 1rem; }
-    .company-main .top .left {
-      width: 43%; }
-      .company-main .top .left .company-lines1 {
-        height: 70px;
-        width: 80%; }
-      .company-main .top .left .picture-div {
+  padding: 3rem 4rem;
+  position: relative;
+  min-width: 250px; }
+  .company-main .company-lines1 {
+    height: 70px;
+    width: 35%;
+    position: absolute; }
+  .company-main h1 {
+    margin-left: 45%; }
+  .company-main p {
+    width: 100%;
+    padding: 0;
+    text-align: justify; }
+    .company-main p .picture-div {
+      width: 45%;
+      float: left;
+      margin-top: 20px; }
+      .company-main p .picture-div img {
+        width: 95%; }
+  @media screen and (max-width: 1600px) {
+    .company-main .company-lines1 {
+      width: 40%; }
+    .company-main h1 {
+      margin-left: 50%; }
+    .company-main p .picture-div {
+      width: 50%; } }
+  @media screen and (max-width: 940px) {
+    .company-main .company-lines1 {
+      width: 80%;
+      height: 60px;
+      position: absolute;
+      top: 10px; }
+    .company-main .title {
+      width: 100%;
+      text-align: center;
+      margin-top: 70px; }
+      .company-main .title h1 {
+        margin: auto; }
+    .company-main p .picture-div {
+      float: none; }
+      .company-main p .picture-div img {
         width: 100%;
-        margin-top: 50px; }
-        .company-main .top .left .picture-div img {
-          width: 100%; }
-    .company-main .top .right {
-      width: 57%;
-      padding-left: 2rem; }
-      .company-main .top .right p {
-        margin-top: 56px;
-        text-align: justify; }
-  .company-main .company-lines2 {
-    height: 80px;
-    width: 30%;
-    margin-left: auto; }
+        margin-bottom: 20px; } }
+
+.company-lines2 {
+  height: 80px;
+  width: 40%;
+  margin-left: auto; }
+  @media screen and (max-width: 940px) {
+    .company-lines2 {
+      width: 60%;
+      height: 70px; } }
+  @media screen and (max-width: 480px) {
+    .company-lines2 {
+      width: 70%;
+      height: 50px; } }
