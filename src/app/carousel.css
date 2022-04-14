@@ -1,11 +1,21 @@
 .carousel-comp-main {
-  width: 70vw;
+  width: 60vw !important;
   height: 75vh; }
   .carousel-comp-main .carousel .paper-carousel {
     height: 75vh;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    box-shadow: none; }
     .carousel-comp-main .carousel .paper-carousel img {
       object-fit: cover;
       width: 100%; }
+  @media screen and (max-width: 1200px) {
+    .carousel-comp-main {
+      width: 100vw !important;
+      margin-left: -10vw; }
+      .carousel-comp-main .carousel .paper-carousel {
+        height: 65vh; } }
+  @media screen and (max-width: 900px) {
+    .carousel-comp-main .carousel .paper-carousel {
+      height: 55vh; } }

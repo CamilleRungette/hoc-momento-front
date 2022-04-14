@@ -2,7 +2,7 @@
   margin-top: 100px;
   padding: 4rem 4rem 0 4rem ;
   position: relative;
-  width: 90%;
+  width: 90vw;
   min-height: 70vh;
 
   .show-title{
@@ -35,10 +35,10 @@
           margin: auto;
           transition-duration: .5s;
           height: 100%;
-        }
-      }
-    }
-  }
+        };
+      };
+    };
+  };
 
   .show-lines1{
     height: 70px;
@@ -78,7 +78,56 @@
     };
   };
 
+  @media screen and (max-width: 1400px) {
+    padding: 4rem 3rem 0 3rem;
+  };
+
+  @media screen and (max-width: 1200px) {
+    padding: 4rem 0 0 0;
+    width: 100%;
+
+    .carousel {
+      width: 80%;
+      margin: auto;
+    };
+
+    .show-lines1{
+      position: absolute;
+      left: 4rem;
+      width: 60%
+    }
+  };
+  
+  @media screen and (max-width: 800px) {
+    .show-title{
+      h1{
+        font-size: 34px !important;
+      };
+
+    };
+    .carousel{
+      .photos-line{
+        li{
+          height: 110px;
+        };
+      };
+    };
+
+    .show-lines1{
+      height: 60px;
+      width: 70%
+    }
+  };
+
+  @media screen and (max-width: 600px) {
+    .show-title{
+      h1{
+        font-size: 30px !important;
+      };
+    };
+  };
 };
+
 .end-lines{
   width: 95%;
   display: flex;
@@ -87,5 +136,21 @@
   .show-lines2{
     height: 70px;
     width: 55%;
+  };
+
+  @media screen and (max-width: 800px) {
+    .show-lines2{
+      width: 65%;
+      height: 60px;
+      margin-top: 10px
+    };
+  };
+
+  @media screen and (max-width: 500px) {
+    .show-lines2{
+      width: 75%;
+      height: 60px;
+      margin-top: 10px
+    }
   };
 };

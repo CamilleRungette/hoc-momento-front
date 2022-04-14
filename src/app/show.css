@@ -2,7 +2,7 @@
   margin-top: 100px;
   padding: 4rem 4rem 0 4rem;
   position: relative;
-  width: 90%;
+  width: 90vw;
   min-height: 70vh; }
   .show-main .show-title {
     text-align: center; }
@@ -53,6 +53,31 @@
       font-size: 18px;
       margin-left: 10px;
       vertical-align: middle; }
+  @media screen and (max-width: 1400px) {
+    .show-main {
+      padding: 4rem 3rem 0 3rem; } }
+  @media screen and (max-width: 1200px) {
+    .show-main {
+      padding: 4rem 0 0 0;
+      width: 100%; }
+      .show-main .carousel {
+        width: 80%;
+        margin: auto; }
+      .show-main .show-lines1 {
+        position: absolute;
+        left: 4rem;
+        width: 60%; } }
+  @media screen and (max-width: 800px) {
+    .show-main .show-title h1 {
+      font-size: 34px !important; }
+    .show-main .carousel .photos-line li {
+      height: 110px; }
+    .show-main .show-lines1 {
+      height: 60px;
+      width: 70%; } }
+  @media screen and (max-width: 600px) {
+    .show-main .show-title h1 {
+      font-size: 30px !important; } }
 
 .end-lines {
   width: 95%;
@@ -61,3 +86,13 @@
   .end-lines .show-lines2 {
     height: 70px;
     width: 55%; }
+  @media screen and (max-width: 800px) {
+    .end-lines .show-lines2 {
+      width: 65%;
+      height: 60px;
+      margin-top: 10px; } }
+  @media screen and (max-width: 500px) {
+    .end-lines .show-lines2 {
+      width: 75%;
+      height: 60px;
+      margin-top: 10px; } }

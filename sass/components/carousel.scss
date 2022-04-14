@@ -1,14 +1,14 @@
 .carousel-comp-main{
-  width: 70vw;
+  width: 60vw !important;
   height: 75vh;
-
+  
   .carousel{
-    
     .paper-carousel{
       height: 75vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: none;
 
       img{
         object-fit: cover;
@@ -16,4 +16,23 @@
       };
     };
   };
+
+  @media screen  and (max-width: 1200px){
+    width: 100vw !important;
+    margin-left: -10vw;
+    .carousel{
+      .paper-carousel{
+        height: 65vh;
+      };
+    };
+  };
+
+  @media screen and (max-width: 900px) {
+    .carousel{
+      .paper-carousel{
+        height: 55vh;
+      };
+    };
+  };
+
 };
