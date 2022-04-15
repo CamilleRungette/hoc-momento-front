@@ -7,12 +7,12 @@ const CarouselComp = ({gallery}) => {
   return (
     <div>
       <Carousel
-          interval={7000}
+          // interval={7000}
           className="carousel"
           navButtonsAlwaysVisible={true}
           PrevIcon={<MdArrowBackIosNew/>}
           NextIcon={<MdOutlineArrowForwardIos/>}
-          autoPlay={true}
+          // autoPlay={true}
           indicators={false}
           >
             {
@@ -30,7 +30,7 @@ function Item({item})
 {
     return (
         <Paper className='paper-carousel'>
-          <img src={item.image} />
+          <img id={item.image == "/images/home5.jpg" && "water"} src={item.image} />
           <div className='text'>
             <p className='subtitle' style={{color: item.color}}>{item.subtitle} </p>
           </div>

@@ -123,6 +123,9 @@
     align-self: center;
     margin-right: 20px;
     position: relative; }
+    @media screen and (max-width: 400px) {
+      .navbar .menu-icon-div {
+        margin-right: 40px; } }
     .navbar .menu-icon-div .menu-icon {
       font-size: 30px;
       border-radius: 4px; }
@@ -397,9 +400,18 @@
     flex-wrap: wrap; }
     .home-footer-main .supports-partners .footer-logo {
       width: 100px;
-      min-width: 50px;
       padding-top: 3rem;
-      padding-bottom: 2rem; }
+      padding-bottom: 2rem;
+      margin-left: 20px;
+      margin-right: 20px; }
+      @media screen and (max-width: 1020px) {
+        .home-footer-main .supports-partners .footer-logo {
+          margin-left: 60px;
+          margin-right: 60px; } }
+      @media screen and (max-width: 700px) {
+        .home-footer-main .supports-partners .footer-logo {
+          margin-left: 40px;
+          margin-right: 40px; } }
       .home-footer-main .supports-partners .footer-logo img {
         width: 100%; }
   .home-footer-main .end-paragraph {
@@ -578,6 +590,9 @@
       height: 100vh;
       width: 100vw;
       object-fit: cover; }
+    @media screen and (max-width: 800px) {
+      .home-main .carousel-home-div .paper-carousel #water {
+        object-position: 30%; } }
     .home-main .carousel-home-div .paper-carousel .text {
       position: absolute;
       top: 45vh;
@@ -852,6 +867,31 @@
       font-size: 18px;
       margin-left: 10px;
       vertical-align: middle; }
+  @media screen and (max-width: 1400px) {
+    .action-main {
+      padding: 4rem 3rem 0 3rem; } }
+  @media screen and (max-width: 1200px) {
+    .action-main {
+      padding: 4rem 0 0 0;
+      width: 100%; }
+      .action-main .carousel {
+        width: 80%;
+        margin: auto; }
+      .action-main .action-lines1 {
+        position: absolute;
+        left: 4rem;
+        width: 60%; } }
+  @media screen and (max-width: 800px) {
+    .action-main .action-title h1 {
+      font-size: 34px !important; }
+    .action-main .carousel .photos-line li {
+      height: 110px; }
+    .action-main .action-lines1 {
+      height: 60px;
+      width: 70%; } }
+  @media screen and (max-width: 600px) {
+    .action-main .action-title h1 {
+      font-size: 30px !important; } }
 
 .end-lines {
   width: 95%;
@@ -860,6 +900,16 @@
   .end-lines .action-lines2 {
     height: 70px;
     width: 55%; }
+  @media screen and (max-width: 800px) {
+    .end-lines .action-lines2 {
+      width: 65%;
+      height: 60px;
+      margin-top: 10px; } }
+  @media screen and (max-width: 500px) {
+    .end-lines .action-lines2 {
+      width: 75%;
+      height: 60px;
+      margin-top: 10px; } }
 
 .agenda-main {
   min-height: 80vh;

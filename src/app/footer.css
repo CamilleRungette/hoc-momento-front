@@ -76,9 +76,18 @@
     flex-wrap: wrap; }
     .home-footer-main .supports-partners .footer-logo {
       width: 100px;
-      min-width: 50px;
       padding-top: 3rem;
-      padding-bottom: 2rem; }
+      padding-bottom: 2rem;
+      margin-left: 20px;
+      margin-right: 20px; }
+      @media screen and (max-width: 1020px) {
+        .home-footer-main .supports-partners .footer-logo {
+          margin-left: 60px;
+          margin-right: 60px; } }
+      @media screen and (max-width: 700px) {
+        .home-footer-main .supports-partners .footer-logo {
+          margin-left: 40px;
+          margin-right: 40px; } }
       .home-footer-main .supports-partners .footer-logo img {
         width: 100%; }
   .home-footer-main .end-paragraph {

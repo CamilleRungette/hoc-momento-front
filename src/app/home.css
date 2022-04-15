@@ -7,6 +7,9 @@
       height: 100vh;
       width: 100vw;
       object-fit: cover; }
+    @media screen and (max-width: 800px) {
+      .home-main .carousel-home-div .paper-carousel #water {
+        object-position: 30%; } }
     .home-main .carousel-home-div .paper-carousel .text {
       position: absolute;
       top: 45vh;

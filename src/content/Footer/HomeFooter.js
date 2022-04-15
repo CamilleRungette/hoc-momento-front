@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useLayoutEffect} from 'react';
 import {AiFillFacebook, AiOutlineInstagram, AiFillYoutube, AiOutlineMail} from "react-icons/ai";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -9,7 +9,6 @@ var Recaptcha = require('react-recaptcha');
 
 const HomeFooter = () => {
 
-  
   const alertRef = useRef();
 
   const [isVerified, setIsVerified] = useState(false);
@@ -22,6 +21,7 @@ const HomeFooter = () => {
     severity: 'success',
     message: ''
   });
+  const [size, setSize] = useState(0);
 
   const theme = createTheme({
     typography: {
@@ -31,6 +31,16 @@ const HomeFooter = () => {
       ].join(','),
     },
   });
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
 
   const copyLink = () => {
     let address = "hocmomentotheatre@gmail.com";
@@ -146,7 +156,7 @@ const HomeFooter = () => {
                     sitekey={process.env.REACT_APP_SITE_CAPTCHA}
                     render="explicit"
                     verifyCallback={verifyCallback}
-                    size='normal'
+                    size={size < 500 ? 'compact' : 'normal'}
                   />
                 </div>
                 <button className='primary-button' onClick={(e) => saveMessage(e)}>Envoyer</button>

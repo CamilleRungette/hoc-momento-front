@@ -122,9 +122,20 @@
 
     .footer-logo{
       width: 100px;
-      min-width: 50px;
       padding-top: 3rem;
       padding-bottom: 2rem;
+      margin-left: 20px;
+      margin-right: 20px;
+
+      @media screen and (max-width: 1020px) {
+       margin-left: 60px;
+       margin-right: 60px;
+      };
+
+      @media screen and (max-width: 700px) {
+        margin-left: 40px;
+        margin-right: 40px;
+      };
       
       img{
         width: 100%
@@ -168,7 +179,4 @@
       margin-left: -1px !important;
     };
   };
-
-
-
-}
+};
