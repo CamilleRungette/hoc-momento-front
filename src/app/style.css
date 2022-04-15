@@ -123,9 +123,6 @@
     align-self: center;
     margin-right: 20px;
     position: relative; }
-    @media screen and (max-width: 400px) {
-      .navbar .menu-icon-div {
-        margin-right: 40px; } }
     .navbar .menu-icon-div .menu-icon {
       font-size: 30px;
       border-radius: 4px; }
@@ -412,6 +409,10 @@
         .home-footer-main .supports-partners .footer-logo {
           margin-left: 40px;
           margin-right: 40px; } }
+      @media screen and (max-width: 400px) {
+        .home-footer-main .supports-partners .footer-logo {
+          margin-left: 20px;
+          margin-right: 20px; } }
       .home-footer-main .supports-partners .footer-logo img {
         width: 100%; }
   .home-footer-main .end-paragraph {

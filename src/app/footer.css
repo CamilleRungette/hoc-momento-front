@@ -88,6 +88,10 @@
         .home-footer-main .supports-partners .footer-logo {
           margin-left: 40px;
           margin-right: 40px; } }
+      @media screen and (max-width: 400px) {
+        .home-footer-main .supports-partners .footer-logo {
+          margin-left: 20px;
+          margin-right: 20px; } }
       .home-footer-main .supports-partners .footer-logo img {
         width: 100%; }
   .home-footer-main .end-paragraph {
