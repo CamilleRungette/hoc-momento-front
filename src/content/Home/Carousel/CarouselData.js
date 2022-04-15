@@ -27,6 +27,6 @@ export const CarouselData = [
     image: "/images/home5.jpg",
     title: "MONTJOIE! SAINT-DENIS!",
     subtitle: "Théâtre In Situ",
-    color: "black"
+    color: "white"
   }
 ];

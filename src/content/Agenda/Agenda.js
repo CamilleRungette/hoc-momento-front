@@ -38,7 +38,7 @@ const Agenda = () => {
     <div>
       <Navbar />
       <div className='agenda-main'>
-        {/* <div className='agenda-title'>
+        <div className='agenda-title'>
           <h1>Agenda {thisYear} </h1>
         </div>
 
@@ -101,7 +101,7 @@ const Agenda = () => {
             </Accordion>
             ) : (<></>)
           ))}
-        </div> */}
+        </div>
       </div>
       <Footer/>
     </div>
