@@ -11,8 +11,8 @@ const Agenda = () => {
   const [events, setEvents] = useState([]);
   const [eventsYear, setEventsYear] = useState([]);
   const date = new Date();
-  // const thisYear = date.getFullYear();
-  const thisYear = 2021;
+  const thisYear = date.getFullYear();
+  // const thisYear = 2021;
   const years = [2023, 2022, 2021, 2020,  2019, 2018];
   const month = date.getMonth();
   const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
