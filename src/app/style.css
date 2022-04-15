@@ -180,7 +180,7 @@
       margin-bottom: 4px; }
   .menu-list .MuiPaper-root::before {
     display: none !important; }
-  .menu-list .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+  .menu-list .MuiAccordionSummary-root {
     min-height: 20px !important; }
   .menu-list #panel1a-header {
     height: 28px !important; }
