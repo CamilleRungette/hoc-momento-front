@@ -109,7 +109,7 @@
       margin-left: 4px !important; }
     .menu-list .accordion .popover-list li {
       margin-bottom: 4px; }
-  .menu-list .css-1elwnq4-MuiPaper-root-MuiAccordion-root::before {
+  .menu-list .MuiPaper-root::before {
     display: none !important; }
   .menu-list .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
     min-height: 20px !important; }
