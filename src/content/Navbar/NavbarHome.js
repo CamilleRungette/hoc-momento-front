@@ -83,7 +83,7 @@ const NavbarHome = () => {
 
   const openMenu = () => {
     let pop = document.getElementById('menu');
-    pop.style.display = "block"
+    pop.style.display = pop.style.display === "block" ? "none" :"block";
   };
 
   const closeMenu = () => {
@@ -114,7 +114,7 @@ const NavbarHome = () => {
         <li className='pointer home-bold'><Link className='link' to="/agenda">Agenda </Link></li> 
       </ul>
       :
-      <div className='menu-icon-div popover-div' onClick={openMenu}><FiMenu className='menu-icon pointer' /> 
+      <div className='menu-icon-div popover-div'><FiMenu className='menu-icon pointer'  onClick={openMenu} /> 
         <div id="menu" className='popover popover-menu' onMouseLeave={closeMenu} > 
           <ul className='menu-list no-list-style navbar-list'>
             <li onClick={closeMenu} id="company" className='pointer'><Link className='link' to="/compagnie">Compagnie </Link></li> 
