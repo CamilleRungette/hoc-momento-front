@@ -1,4 +1,4 @@
-import React, {useRef, useState, useLayoutEffect} from 'react';
+import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
 import {AiFillFacebook, AiOutlineInstagram, AiFillYoutube, AiOutlineMail} from "react-icons/ai";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -22,7 +22,7 @@ const HomeFooter = () => {
     message: ''
   });
   const [size, setSize] = useState(0);
-
+console.log(size);
   const theme = createTheme({
     typography: {
       fontFamily: [
@@ -40,6 +40,10 @@ const HomeFooter = () => {
     updateSize();
     return () => window.removeEventListener('resize', updateSize);
   }, []);
+
+  useEffect(() => {
+
+  },[size])
 
 
   const copyLink = () => {
@@ -156,7 +160,7 @@ const HomeFooter = () => {
                     sitekey={process.env.REACT_APP_SITE_CAPTCHA}
                     render="explicit"
                     verifyCallback={verifyCallback}
-                    size={size < 500 ? 'compact' : 'normal'}
+                    size={'normal'}
                   />
                 </div>
                 <button className='primary-button' onClick={(e) => saveMessage(e)}>Envoyer</button>

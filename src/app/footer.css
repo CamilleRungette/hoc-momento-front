@@ -68,6 +68,11 @@
     .home-footer-main .contact-form .contact-input {
       margin-bottom: 10px;
       min-width: 250px; }
+    @media screen and (max-width: 440px) {
+      .home-footer-main .contact-form {
+        margin-left: 15px; }
+        .home-footer-main .contact-form button {
+          margin-left: 70px; } }
   .home-footer-main .supports-partners {
     border-top: 1px black solid;
     border-bottom: 1px black solid;
@@ -118,3 +123,6 @@
     .footer-main .footer-list .instagram {
       font-size: 24px !important;
       margin-left: -1px !important; }
+  @media screen and (max-width: 450px) {
+    .footer-main {
+      padding: 10px 30px 0 30px; } }

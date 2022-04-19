@@ -7,12 +7,12 @@ const CarouselComp = ({gallery}) => {
   return (
     <div>
       <Carousel
-          // interval={7000}
+          interval={7000}
           className="carousel"
           navButtonsAlwaysVisible={true}
           PrevIcon={<MdArrowBackIosNew/>}
           NextIcon={<MdOutlineArrowForwardIos/>}
-          // autoPlay={true}
+          autoPlay={true}
           indicators={false}
           >
             {
