@@ -1,6 +1,6 @@
 import React from 'react';
 import { CarouselData } from './Carousel/CarouselData';
-import {Carousel, Lines1, Lines2, HomeFooter, NavbarHome, CarouselComp} from "./_index";
+import {Carousel, Lines1, Lines2, HomeFooter, NavbarHome} from "./_index";
 
 
 const Home = () => {

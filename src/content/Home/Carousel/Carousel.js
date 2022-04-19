@@ -30,7 +30,7 @@ function Item({item})
 {
     return (
         <Paper className='paper-carousel'>
-          <img id={item.image == "/images/home5.jpg" && "water"} src={item.image} />
+          <img id={item.image === "/images/home5.jpg" && "water"} alt={item.title} src={item.image} />
           <div className='text'>
             <p className='subtitle' style={{color: item.color}}>{item.subtitle} </p>
           </div>

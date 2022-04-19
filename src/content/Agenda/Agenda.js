@@ -12,9 +12,7 @@ const Agenda = () => {
   const [eventsYear, setEventsYear] = useState([]);
   const date = new Date();
   const thisYear = date.getFullYear();
-  // const thisYear = 2021;
   const years = [2023, 2022, 2021, 2020,  2019, 2018];
-  const month = date.getMonth();
   const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
   useEffect(() => {
@@ -73,7 +71,7 @@ const Agenda = () => {
                 <h3>{year}</h3>
               </AccordionSummary>
               {events.map(event => (
-                new Date(event.show[0].startDate).getFullYear() == year ? (
+                new Date(event.show[0].startDate).getFullYear() === year ? (
                 <AccordionDetails key={`${event._id}${year}`} className="event-details">
                   <h2>{event.title}</h2>
                   <div className='event-date'>

@@ -22,7 +22,7 @@ const HomeFooter = () => {
     message: ''
   });
   const [size, setSize] = useState(0);
-console.log(size);
+
   const theme = createTheme({
     typography: {
       fontFamily: [
@@ -106,7 +106,7 @@ console.log(size);
               <li>Ariane Descoueyte</li>
             </ul>
           <div className='div-logo'>
-            <img src="/images/logo_noir.png" />
+            <img alt="Hoc Momento" src="/images/logo_noir.png" />
           </div>
           </div>
 
@@ -171,22 +171,22 @@ console.log(size);
 
       <div className='supports-partners '>
         <div className='footer-logo'>
-          <img src='/images/logos/logo_drac.png' />
+          <img alt="Drac" src='/images/logos/logo_drac.png' />
         </div>
         <div className='footer-logo'>
-          <img src='/images/logos/logo_saint_denis.png' />
+          <img alt="Ville de Saint-Denis" src='/images/logos/logo_saint_denis.png' />
         </div>
         <div className='footer-logo'>
-          <img src='/images/logos/logo_saint_ouen.png' />
+          <img alt="Ville de Saint-Ouen" src='/images/logos/logo_saint_ouen.png' />
         </div>
         <div className='footer-logo'>
-          <img src='/images/logos/logo_adami.png' />
+          <img alt="Adami" src='/images/logos/logo_adami.png' />
         </div>
         <div className='footer-logo'>
-          <img src='/images/logos/logo_condorcet.png' />
+          <img alt="Campus Condorcet" src='/images/logos/logo_condorcet.png' />
         </div>
         <div className='footer-logo'>
-          <img src='/images/logos/logo_mains_doeuvres.png' />
+          <img alt="Mains d'Oeuvres" src='/images/logos/logo_mains_doeuvres.png' />
         </div>
       </div>
 

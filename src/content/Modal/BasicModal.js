@@ -1,5 +1,4 @@
 import React, {useState, useMemo, forwardRef, useImperativeHandle} from "react";
-import {AiOutlineClose} from "react-icons/ai";
 import {MdOutlineClose} from "react-icons/md";
 
 

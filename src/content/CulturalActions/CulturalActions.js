@@ -60,7 +60,7 @@ const showModal = () => {
         <div className='links'>
           <ul className='no-list-style'>
           {action?.links.map((link, i) => (
-            link.type == "pdf" ? (
+            link.type === "pdf" ? (
               <li key={action._id+i}>
                 <a href={link.link} rel="noopener noreferrer" className='action-link' >  {link.name} </a> <BsDownload className='icon'/>
               </li>

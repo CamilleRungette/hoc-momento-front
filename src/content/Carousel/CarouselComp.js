@@ -31,7 +31,7 @@ function Item({item})
 {
     return (
         <Paper className='paper-carousel'>
-          <img src={item} />
+          <img src={item} alt="Spectacle de la compagnie Hoc Momento" />
         </Paper>
     )
 }

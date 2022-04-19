@@ -13,7 +13,7 @@ const NavbarHome = () => {
   const [navbarStyle, setNavbarStyle] = useState(true);
   const [showsContent, setShowsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
   const [actionsContent, setActionsContent] = useState(<div className='loading-div'><img src="/images/loading-buffering.gif" alt='shows are loading' /></div>)
-  const [size, setSize] = useState(0);
+  const [size, setSize] = useState([0, 0]);
 
   useEffect(() => {
     changeBackground();
@@ -24,7 +24,7 @@ const NavbarHome = () => {
       let content = 
       <ul className='no-list-style menu-list popover-list navbar-list'>
         {res.data.map(show => (
-          <li onClick={size > 1000 ? hidePopoverShows : closeMenu} key={show._id} className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
+          <li onClick={size[0] > 1000 ? hidePopoverShows : closeMenu} key={show._id} className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
         ))}
       </ul>
       setShowsContent(content);
@@ -37,7 +37,7 @@ const NavbarHome = () => {
     .then(res => {
       let content = <ul className='no-list-style menu-list popover-list'>
       {res.data.map(action => (
-        <li onClick={size > 1000 ? hidePopoverActions : closeMenu} key={action._id} className='pointer'><Link to={`/action-culturelle/${action._id}`}> {action.place} </Link></li>
+        <li onClick={size[0] > 1000 ? hidePopoverActions : closeMenu} key={action._id} className='pointer'><Link to={`/action-culturelle/${action._id}`}> {action.place} </Link></li>
       ))}
       </ul>
       setActionsContent(content)
@@ -46,7 +46,7 @@ const NavbarHome = () => {
 
   useLayoutEffect(() => {
     function updateSize() {
-      setSize(window.innerWidth);
+      setSize([window.innerWidth, window.innerHeight]);
     }
     window.addEventListener('resize', updateSize);
     updateSize();
@@ -54,7 +54,7 @@ const NavbarHome = () => {
   }, []);
 
   const changeBackground = () => {
-    if (window.scrollY > 900){
+    if (window.scrollY > size[1]){
       setNavbarStyle(true);
     } else {
       setNavbarStyle(false);
@@ -62,22 +62,22 @@ const NavbarHome = () => {
   };
 
   const showPopoverShows = () => {
-    let pop = document.getElementsByClassName('popover-shows')[0];
+    let pop = document.getElementById('popover-shows');
     pop.style.display = "block";
   };
 
   const hidePopoverShows = () => {
-    let pop = document.getElementsByClassName('popover-shows')[0];
+    let pop = document.getElementById('popover-shows');
     pop.style.display = "none";
   }; 
   
-  const showPopoverActions = () => {
-    let pop = document.getElementsByClassName('popover-actions')[0];
+  const showPopoverActions = (type) => {
+    let pop = document.getElementById('popover-actions');
     pop.style.display = "block";
   };
 
   const hidePopoverActions = () => {
-    let pop = document.getElementsByClassName('popover-actions')[0];
+    let pop = document.getElementById('popover-actions');
     pop.style.display = "none";
   };
 
@@ -98,16 +98,16 @@ const NavbarHome = () => {
         src={navbarStyle ? "/images/logo_noir.png" : "/images/logo_blanc.png" }
         /></Link>
       </div>
-      {size > 1000 ? 
+      {size[0] > 1000 ? 
       <ul className='navbar-list no-list-style flex-space-between'>
         <li className='pointer home-bold'><Link className='link' to="/compagnie">Compagnie </Link></li> 
         <li className='pointer home-bold popover-div' onMouseEnter={showPopoverShows} onMouseLeave={hidePopoverShows}>Spectacles
-          <div className='popover popover-shows' >
+          <div id="popover-shows" className='popover' >
             {showsContent}
           </div>
         </li>
         <li className='pointer home-bold popover-div' onMouseEnter={showPopoverActions}  onMouseLeave={hidePopoverActions}>Actions Culturelles
-        <div className='popover-actions popover'>
+        <div id="popover-actions" className='popover'>
             {actionsContent}
           </div>
         </li>

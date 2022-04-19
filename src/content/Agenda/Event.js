@@ -4,9 +4,7 @@ import { BasicModal } from './_index';
 const Event = ({event, date}) => {
 
   const modalRef = useRef();
-  // const year = date.getFullYear();
   const year = 2021;
-  const month = date.getMonth();
   const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
   const showModal = () => {
@@ -16,7 +14,6 @@ const Event = ({event, date}) => {
   return (
     <div className='event-div'>
       <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>
-      {/* <span className='see-more span-link pointer' onClick={showModal}> Voir </span> */}
       <h2 className='event-month'>{months[new Date(event.show[0].startDate).getMonth() +1]} {year} </h2>
       <p>
         {new Date(event.show[0].startDate).getDate() === new Date(event.show[0].endDate).getDate() ?
