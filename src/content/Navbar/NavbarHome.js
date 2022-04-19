@@ -42,7 +42,8 @@ const NavbarHome = () => {
       </ul>
       setActionsContent(content)
     });
-  },[]);
+  },[]); 
+
 
   useLayoutEffect(() => {
     function updateSize() {
@@ -53,8 +54,10 @@ const NavbarHome = () => {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
+  console.log(window.screenY);
+
   const changeBackground = () => {
-    if (window.scrollY > size[1]){
+    if (window.scrollY > 900){
       setNavbarStyle(true);
     } else {
       setNavbarStyle(false);
