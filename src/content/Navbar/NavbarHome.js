@@ -54,8 +54,6 @@ const NavbarHome = () => {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
-  console.log(window.screenY);
-
   const changeBackground = () => {
     if (window.scrollY > 900){
       setNavbarStyle(true);
