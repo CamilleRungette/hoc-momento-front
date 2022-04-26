@@ -30,7 +30,7 @@ const Event = ({event, date}) => {
 
       <h2 className='event-name'>{event.title}</h2> 
 
-      {event.place ? <p>{event.dates[0].place} </p> :  <></>}
+      {event.dates[0].place && <p>{event.dates[0].place} </p> }
       <p>{event.dates[0].address ? <span>{event.dates[0].address},</span> : <></>} {event.dates[0].city ? event.dates[0].city : <></>}</p>
       <BasicModal ref={modalRef} content={
         <div className='event-description'>

@@ -48,7 +48,7 @@ const Agenda = () => {
         <div className='future-events'>
           <ul className='no-list-style'>
             {events.map(event => (
-              new Date(event.dates[0].startDate).getFullYear() === thisYear ?(
+              new Date(event.dates[0].startDate).getFullYear() === thisYear && event.title !== "TEST" ?(
                 <li key={event._id} className="event" >
                   <Event event={event} date={date} />
                 </li>
