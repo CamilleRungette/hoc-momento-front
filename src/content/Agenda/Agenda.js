@@ -32,7 +32,6 @@ const Agenda = () => {
     })
   },[]);
 
-  console.log(events);
   return (
     <div>
       <Navbar />
