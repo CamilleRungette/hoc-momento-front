@@ -22,7 +22,7 @@ const Agenda = () => {
         setEvents(res.data);
         let array = [];
         res.data.forEach(event => {
-          array.push(new Date(event.dates[0].startDate).getFullYear());
+          array.push(new Date(event.show[0].startDate).getFullYear());
         });
         setEventsYear(array);
       };
@@ -47,7 +47,7 @@ const Agenda = () => {
         <div className='future-events'>
           <ul className='no-list-style'>
             {events.map(event => (
-              new Date(event.dates[0].startDate).getFullYear() === thisYear && event.title !== "Test" ?(
+              new Date(event.show[0].startDate).getFullYear() === thisYear && event.title !== "Test" ?(
                 <li key={event._id} className="event" >
                   <Event event={event} date={date} />
                 </li>
@@ -71,26 +71,26 @@ const Agenda = () => {
                 <h3>{year}</h3>
               </AccordionSummary>
               {events.map(event => (
-                new Date(event.dates[0].startDate).getFullYear() === year ? (
+                new Date(event.show[0].startDate).getFullYear() === year ? (
                 <AccordionDetails key={`${event._id}${year}`} className="event-details">
                   <h2>{event.title}</h2>
                   <div className='event-date'>
                     <p>
-                      {new Date(event.dates[0].startDate).getDate() === new Date(event.dates[0].endDate).getDate() ?
-                        <span>Le {new Date(event.dates[0].startDate).getDate()} {months[new Date(event.dates[0].startDate).getMonth() +1]} </span>
+                      {new Date(event.show[0].startDate).getDate() === new Date(event.show[0].endDate).getDate() ?
+                        <span>Le {new Date(event.show[0].startDate).getDate()} {months[new Date(event.show[0].startDate).getMonth() +1]} </span>
                       : 
                       <span>
-                        Du {new Date(event.dates[0].startDate).getDate()} 
-                          {new Date(event.dates[0].startDate).getMonth() !== new Date(event.dates[0].endDate).getMonth() ? (
-                          <span> {months[new Date(event.dates[0].startDate).getMonth() +1]} </span>
+                        Du {new Date(event.show[0].startDate).getDate()} 
+                          {new Date(event.show[0].startDate).getMonth() !== new Date(event.show[0].endDate).getMonth() ? (
+                          <span> {months[new Date(event.show[0].startDate).getMonth() +1]} </span>
                           ):( <> </>)}
-                        au {new Date(event.dates[0].endDate).getDate()} {months[new Date(event.dates[0].endDate).getMonth() +1]}
+                        au {new Date(event.show[0].endDate).getDate()} {months[new Date(event.show[0].endDate).getMonth() +1]}
                       </span>}
                     </p>
                     
-                    <p>{event.dates[0].place} </p>
+                    <p>{event.show[0].place} </p>
 
-                    <p>{event.dates[0].address ? <span>{event.dates[0].address},</span> : <></>} {event.dates[0].city ? event.dates[0].city : <></>}</p>
+                    <p>{event.show[0].address ? <span>{event.show[0].address},</span> : <></>} {event.show[0].city ? event.show[0].city : <></>}</p>
 
                   </div>
                 </AccordionDetails>
