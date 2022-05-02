@@ -30,7 +30,7 @@ const Event = ({event, index}) => {
           {new Date(date.startDate).getHours()-2 === new Date(date.endDate).getHours()-2 ? (
             <span> à {new Date(date.startDate).getHours()-2}h </span>
           ) : (
-            <span> de {new Date(date.startDate).getHours()-2} h et {new Date(date.endDate).getHours()-2}h </span>
+            <span> de {new Date(date.startDate).getHours()-2} h à {new Date(date.endDate).getHours()-2}h </span>
           )}
           <br/>
           <span className='event-name'>{event.title}</span> 
