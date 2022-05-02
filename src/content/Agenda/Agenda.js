@@ -31,10 +31,10 @@ const Agenda = () => {
         });
         setEventsYear(array);
 
-        let arrayEventsThisYear = [... eventsThisYear];
-        arrayEventsYear.map(event => {     
-          event.dates.map(show => {
-            if (!arrayEventsThisYear[new Date(show.startDate).getMonth()].filter(item => item._id == event._id).length) {
+        let arrayEventsThisYear = [...eventsThisYear];
+        arrayEventsYear.forEach(event => {     
+          event.dates.forEach(show => {
+            if (!arrayEventsThisYear[new Date(show.startDate).getMonth()].filter(item => item._id === event._id).length) {
               arrayEventsThisYear[new Date(show.startDate).getMonth()].push(event);
             };
           });    

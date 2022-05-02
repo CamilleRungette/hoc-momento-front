@@ -14,7 +14,7 @@ const Event = ({event, index}) => {
   return (
     <div className='event-div'>    
       {event.dates.map(date => (
-        new Date(date.startDate).getMonth() == index ? 
+        new Date(date.startDate).getMonth() === index ? 
         <p className='event-item'>
          { event.description && <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>}
           {new Date(date.startDate).getDate() === new Date(date.endDate).getDate() ?
