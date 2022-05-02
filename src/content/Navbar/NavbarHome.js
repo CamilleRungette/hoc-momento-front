@@ -65,6 +65,9 @@ const NavbarHome = () => {
   const showPopoverShows = () => {
     let pop = document.getElementById('popover-shows');
     pop.style.display = "block";
+    
+    let otherPop = document.getElementById('popover-actions');
+    if (otherPop.style.display === "block") hidePopoverActions();
   };
 
   const hidePopoverShows = () => {
@@ -75,6 +78,9 @@ const NavbarHome = () => {
   const showPopoverActions = (type) => {
     let pop = document.getElementById('popover-actions');
     pop.style.display = "block";
+    
+    let otherPop = document.getElementById('popover-actions');
+    if (otherPop.style.display === "block") hidePopoverShows();
   };
 
   const hidePopoverActions = () => {
@@ -92,8 +98,13 @@ const NavbarHome = () => {
     pop.style.display = "none";
   };
 
+  const closeAll = () => {
+    hidePopoverActions();
+    hidePopoverShows();
+  };
+
   return (
-    <div className={navbarStyle ? "navbar navbar-main" : "navbar navbar-home"}>
+    <div className={navbarStyle ? "navbar navbar-main" : "navbar navbar-home"} onMouseLeave={closeAll}>
       <div className='logo-div'>
         <Link className='link' to="/"><img className='logo pointer' alt="Hoc Momento" 
         src={navbarStyle ? "/images/logo_noir.png" : "/images/logo_blanc.png" }
@@ -102,13 +113,13 @@ const NavbarHome = () => {
       {size[0] > 1000 ? 
       <ul className='navbar-list no-list-style flex-space-between'>
         <li className='pointer home-bold'><Link className='link' to="/compagnie">Compagnie </Link></li> 
-        <li className='pointer home-bold popover-div' onMouseEnter={showPopoverShows} onMouseLeave={hidePopoverShows}>Spectacles
-          <div id="popover-shows" className='popover' >
+        <li className='pointer home-bold popover-div' onMouseEnter={showPopoverShows} >Spectacles
+          <div id="popover-shows" className='popover' onMouseLeave={hidePopoverShows} >
             {showsContent}
           </div>
         </li>
-        <li className='pointer home-bold popover-div' onMouseEnter={showPopoverActions}  onMouseLeave={hidePopoverActions}>Actions Culturelles
-        <div id="popover-actions" className='popover'>
+        <li className='pointer home-bold popover-div' onMouseEnter={showPopoverActions} >Actions Culturelles
+        <div id="popover-actions" className='popover' onMouseLeave={hidePopoverActions}>
             {actionsContent}
           </div>
         </li>
