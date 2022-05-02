@@ -1,10 +1,9 @@
 import React, {useRef} from 'react';
 import { BasicModal } from './_index';
 
-const Event = ({event, date}) => {
+const Event = ({event, thisYear}) => {
 
   const modalRef = useRef();
-  const year = 2021;
   const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
   const showModal = () => {
@@ -14,7 +13,7 @@ const Event = ({event, date}) => {
   return (
     <div className='event-div'>
       {event.description && <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>}
-      <h2 className='event-month'>{months[new Date(event.dates[0].startDate).getMonth() +1]} {year} </h2>
+      <h2 className='event-month'>{months[new Date(event.dates[0].startDate).getMonth() +1]} {thisYear} </h2>
       <p>
         {new Date(event.dates[0].startDate).getDate() === new Date(event.dates[0].endDate).getDate() ?
           <span>Le {new Date(event.dates[0].startDate).getDate()} {months[new Date(event.dates[0].startDate).getMonth() +1]} </span>

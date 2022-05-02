@@ -15,6 +15,7 @@ const Agenda = () => {
   const years = [2023, 2022, 2021, 2020,  2019, 2018];
   const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
+  console.log(thisYear);
   useEffect(() => {
     axios.get(`${url}/events`)
     .then(res => {
@@ -49,7 +50,7 @@ const Agenda = () => {
             {events.map(event => (
               new Date(event.dates[0].startDate).getFullYear() === thisYear && event.title !== "Test" ?(
                 <li key={event._id} className="event" >
-                  <Event event={event} date={date} />
+                  <Event event={event} thisYear={thisYear} />
                 </li>
               ):( 
               <></>)
