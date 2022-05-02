@@ -40,7 +40,6 @@ const Agenda = () => {
           });    
         });
 
-        console.log(arrayEventsThisYear);
         setEventsThisYear(arrayEventsThisYear);
       };
     })
@@ -84,7 +83,7 @@ const Agenda = () => {
           <h3>Dates passées</h3>
           {years.map(year => (
             year < thisYear && eventsYear.includes(year) ? (
-            <Accordion key={year} className='accordion'>
+            <Accordion key={Math.floor(Math.random() * 10000)} className='accordion'>
               <AccordionSummary
                 expandIcon={<IoIosMore className='icon' />}
                 aria-controls="panel1a-content"
@@ -94,7 +93,7 @@ const Agenda = () => {
               </AccordionSummary>
               {events.map(event => (
                 new Date(event.dates[0].startDate).getFullYear() === year ? (
-                <AccordionDetails key={`${event._id}${year}`} className="event-details">
+                <AccordionDetails key={Math.floor(Math.random() * 10000)} className="event-details">
                   <h2>{event.title}</h2>
                   <div className='event-date'>
                     <p>

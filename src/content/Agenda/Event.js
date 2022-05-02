@@ -12,10 +12,10 @@ const Event = ({event, index}) => {
 
 
   return (
-    <div className='event-div'>    
+    <div className='event-div' key={Math.floor(Math.random() * 10000)}>    
       {event.dates.map(date => (
         new Date(date.startDate).getMonth() === index ? 
-        <p className='event-item'>
+        <p className='event-item' key={Math.floor(Math.random() * 10000)}>
          { event.description && <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>}
           {new Date(date.startDate).getDate() === new Date(date.endDate).getDate() ?
             <span>Le {new Date(date.startDate).getDate()} {months[new Date(date.startDate).getMonth()]} </span>

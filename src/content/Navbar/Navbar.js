@@ -65,10 +65,10 @@ const Navbar = () => {
 
   const hidePopoverShows = () => {
     let pop = document.getElementById('popover-shows');
-    pop.style.display = "none";
+    if (pop) pop.style.display = "none";
   }; 
   
-  const showPopoverActions = (type) => {
+  const showPopoverActions = () => {
     let pop = document.getElementById('popover-actions');
     pop.style.display = "block";
     
@@ -78,7 +78,7 @@ const Navbar = () => {
 
   const hidePopoverActions = () => {
     let pop = document.getElementById('popover-actions');
-    pop.style.display = "none";
+    if (pop) pop.style.display = "none";
   };
 
   const openMenu = () => {
