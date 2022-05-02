@@ -13,7 +13,7 @@ const Event = ({event, date}) => {
 
   return (
     <div className='event-div'>
-      <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>
+      {event.description && <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>}
       <h2 className='event-month'>{months[new Date(event.dates[0].startDate).getMonth() +1]} {year} </h2>
       <p>
         {new Date(event.dates[0].startDate).getDate() === new Date(event.dates[0].endDate).getDate() ?
