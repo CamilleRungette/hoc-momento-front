@@ -10,6 +10,7 @@ const Event = ({event, index}) => {
     modalRef.current.showModal();
   };
 
+
   return (
     <div className='event-div'>    
       {event.dates.map(date => (
@@ -25,11 +26,18 @@ const Event = ({event, index}) => {
               <span> {months[new Date(date.startDate).getMonth()]} </span>
               ):( <> </>)}
             au {new Date(date.endDate).getDate()} {months[new Date(date.endDate).getMonth()]}
-          </span>}
-          <h2 className='event-name'>{event.title}</h2> 
+          </span> }
+          {new Date(date.startDate).getHours()-2 === new Date(date.endDate).getHours()-2 ? (
+            <span> à {new Date(date.startDate).getHours()-2}h </span>
+          ) : (
+            <span> de {new Date(date.startDate).getHours()-2} h et {new Date(date.endDate).getHours()-2}h </span>
+          )}
+          <br/>
+          <span className='event-name'>{event.title}</span> 
+          <br/>
 
-          {date.place && <p>{date.place} </p> }
-          <p>{date.address ? <span>{date.address},</span> : <></>} {date.city ? date.city : <></>}</p>
+          {date.place && <span>{date.place} </span> }
+          <span>{date.address ? <span>{date.address},</span> : <></>} {date.city ? date.city : <></>}</span>
         </p>
         : <></>
       ))}

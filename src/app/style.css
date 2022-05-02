@@ -964,7 +964,10 @@
         font-weight: 10; }
       .agenda-main .future-events .event .event-div .event-name {
         text-transform: uppercase;
-        font-size: 18px; }
+        font-size: 18px;
+        padding: .5rem 0 !important;
+        display: inline-block;
+        font-weight: bold; }
       .agenda-main .future-events .event .event-div .event-description {
         width: 30rem;
         padding: 1rem; }

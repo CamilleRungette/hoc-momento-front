@@ -49,7 +49,6 @@ const Agenda = () => {
     })
   },[]);
 
-  console.log(eventsThisYear);
   return (
     <div>
       <Navbar />
