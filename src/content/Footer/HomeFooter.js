@@ -176,9 +176,9 @@ const HomeFooter = () => {
         <div className='footer-logo'>
           <img alt="Ville de Saint-Denis" src='/images/logos/logo_saint_denis.png' />
         </div>
-        <div className='footer-logo'>
+        {/* <div className='footer-logo'>
           <img alt="Ville de Saint-Ouen" src='/images/logos/logo_saint_ouen.png' />
-        </div>
+        </div> */}
         <div className='footer-logo'>
           <img alt="Adami" src='/images/logos/logo_adami.png' />
         </div>
