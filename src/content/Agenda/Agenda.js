@@ -10,22 +10,34 @@ const Agenda = () => {
 
   const [events, setEvents] = useState([]);
   const [eventsYear, setEventsYear] = useState([]);
+  const [eventsThisYear, setEventsThisYear] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]);
   const date = new Date();
   const thisYear = date.getFullYear();
   const years = [2023, 2022, 2021, 2020,  2019, 2018];
   const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
-  console.log(thisYear);
   useEffect(() => {
     axios.get(`${url}/events`)
     .then(res => {
       if (res.status === 200) {
         setEvents(res.data);
         let array = [];
+        let arrayEventsYear = []
         res.data.forEach(event => {
           array.push(new Date(event.dates[0].startDate).getFullYear());
+          if (new Date(event.dates[0].startDate).getFullYear() === thisYear){
+            arrayEventsYear.push(event);
+          };
         });
         setEventsYear(array);
+
+        console.log(arrayEventsYear);
+        let arrayEventsThisYear = [... eventsThisYear];
+        arrayEventsYear.map(event => {
+          arrayEventsThisYear[new Date(event.dates[0].startDate).getMonth()] = event;
+        });
+
+        console.log(arrayEventsThisYear);
       };
     })
     .catch(err => {
@@ -78,14 +90,14 @@ const Agenda = () => {
                   <div className='event-date'>
                     <p>
                       {new Date(event.dates[0].startDate).getDate() === new Date(event.dates[0].endDate).getDate() ?
-                        <span>Le {new Date(event.dates[0].startDate).getDate()} {months[new Date(event.dates[0].startDate).getMonth() +1]} </span>
+                        <span>Le {new Date(event.dates[0].startDate).getDate()} {months[new Date(event.dates[0].startDate).getMonth()]} </span>
                       : 
                       <span>
                         Du {new Date(event.dates[0].startDate).getDate()} 
                           {new Date(event.dates[0].startDate).getMonth() !== new Date(event.dates[0].endDate).getMonth() ? (
-                          <span> {months[new Date(event.dates[0].startDate).getMonth() +1]} </span>
+                          <span> {months[new Date(event.dates[0].startDate).getMonth()]} </span>
                           ):( <> </>)}
-                        au {new Date(event.dates[0].endDate).getDate()} {months[new Date(event.dates[0].endDate).getMonth() +1]}
+                        au {new Date(event.dates[0].endDate).getDate()} {months[new Date(event.dates[0].endDate).getMonth()]}
                       </span>}
                     </p>
                     

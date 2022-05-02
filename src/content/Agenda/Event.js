@@ -13,17 +13,17 @@ const Event = ({event, thisYear}) => {
   return (
     <div className='event-div'>
       {event.description && <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>}
-      <h2 className='event-month'>{months[new Date(event.dates[0].startDate).getMonth() +1]} {thisYear} </h2>
+      <h2 className='event-month'>{months[new Date(event.dates[0].startDate).getMonth()]} {thisYear} </h2>
       <p>
         {new Date(event.dates[0].startDate).getDate() === new Date(event.dates[0].endDate).getDate() ?
-          <span>Le {new Date(event.dates[0].startDate).getDate()} {months[new Date(event.dates[0].startDate).getMonth() +1]} </span>
+          <span>Le {new Date(event.dates[0].startDate).getDate()} {months[new Date(event.dates[0].startDate).getMonth()]} </span>
         : 
         <span>
           Du {new Date(event.dates[0].startDate).getDate()} 
             {new Date(event.dates[0].startDate).getMonth() !== new Date(event.dates[0].endDate).getMonth() ? (
-            <span> {months[new Date(event.dates[0].startDate).getMonth() +1]} </span>
+            <span> {months[new Date(event.dates[0].startDate).getMonth()]} </span>
             ):( <> </>)}
-          au {new Date(event.dates[0].endDate).getDate()} {months[new Date(event.dates[0].endDate).getMonth() +1]}
+          au {new Date(event.dates[0].endDate).getDate()} {months[new Date(event.dates[0].endDate).getMonth()]}
         </span>}
       </p>
 
