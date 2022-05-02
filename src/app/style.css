@@ -944,13 +944,22 @@
   .agenda-main .future-events .event {
     width: 40%;
     margin: auto;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     min-width: 300px; }
-    .agenda-main .future-events .event .event-div {
+    .agenda-main .future-events .event .month {
       width: 50%;
       margin: auto;
-      position: relative; }
+      position: relative;
+      border-bottom: solid 1px #3e79bc; }
+    .agenda-main .future-events .event .event-div {
+      margin-bottom: 40px; }
+      .agenda-main .future-events .event .event-div .event-item {
+        position: relative; }
+      .agenda-main .future-events .event .event-div .see-more {
+        position: absolute;
+        top: 0;
+        right: 0; }
       .agenda-main .future-events .event .event-div .event-month {
         font-weight: 10; }
       .agenda-main .future-events .event .event-div .event-name {
@@ -971,20 +980,14 @@
       font-weight: bold; }
       .agenda-main .future-events .event .span-link:hover {
         text-decoration: none; }
-    .agenda-main .future-events .event:not(:first-child) {
-      border-top: solid 1px #3e79bc; }
-      .agenda-main .future-events .event:not(:first-child) .see-more {
-        position: absolute;
-        top: 1rem;
-        right: 1rem; }
     .agenda-main .future-events .event:first-child .see-more {
       position: absolute;
       right: 1rem; }
     @media screen and (max-width: 1500px) {
-      .agenda-main .future-events .event .event-div {
+      .agenda-main .future-events .event .month {
         width: 70%; } }
     @media screen and (max-width: 1200px) {
-      .agenda-main .future-events .event .event-div {
+      .agenda-main .future-events .event .month {
         width: 100%; } }
   @media screen and (max-width: 450px) {
     .agenda-main .future-events {

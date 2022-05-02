@@ -31,14 +31,30 @@
     .event{
       width: 40%;
       margin: auto; 
-      padding-top: 14px;
-      padding-bottom: 14px;
+      padding-top: 8px;
+      padding-bottom: 8px;
       min-width: 300px;
 
-      .event-div{
+      .month{
         width: 50%;
         margin: auto;
         position: relative;
+        border-bottom: solid 1px $primary ;
+      };
+      
+      
+      .event-div{
+        margin-bottom: 40px;
+        
+        .event-item{
+          position: relative;
+        }
+        .see-more{
+          position: absolute;
+          top: 0;
+          right: 0;
+        };
+
 
         .event-month{
           font-weight: 10;
@@ -74,15 +90,6 @@
         };
       };
 
-      &:not(:first-child){
-        border-top: solid 1px $primary ;
-        .see-more{
-          position: absolute;
-          top: 1rem;
-          right: 1rem;
-        };
-      };
-
       &:first-child{
         .see-more{
           position: absolute;
@@ -91,13 +98,14 @@
       };
 
       @media screen and (max-width: 1500px) {
-        .event-div{
+        .month{
           width: 70%;
         };
+
       };
 
       @media screen and (max-width: 1200px) {
-        .event-div{
+        .month{
           width: 100%;
         };
       };

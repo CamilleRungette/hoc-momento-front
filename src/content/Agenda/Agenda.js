@@ -10,7 +10,7 @@ const Agenda = () => {
 
   const [events, setEvents] = useState([]);
   const [eventsYear, setEventsYear] = useState([]);
-  const [eventsThisYear, setEventsThisYear] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]);
+  const [eventsThisYear, setEventsThisYear] = useState([[], [], [], [], [], [], [], [], [], [], [], []]);
   const date = new Date();
   const thisYear = date.getFullYear();
   const years = [2023, 2022, 2021, 2020,  2019, 2018];
@@ -31,13 +31,17 @@ const Agenda = () => {
         });
         setEventsYear(array);
 
-        console.log(arrayEventsYear);
         let arrayEventsThisYear = [... eventsThisYear];
-        arrayEventsYear.map(event => {
-          arrayEventsThisYear[new Date(event.dates[0].startDate).getMonth()] = event;
+        arrayEventsYear.map(event => {     
+          event.dates.map(show => {
+            if (!arrayEventsThisYear[new Date(show.startDate).getMonth()].filter(item => item._id == event._id).length) {
+              arrayEventsThisYear[new Date(show.startDate).getMonth()].push(event);
+            };
+          });    
         });
 
         console.log(arrayEventsThisYear);
+        setEventsThisYear(arrayEventsThisYear);
       };
     })
     .catch(err => {
@@ -45,6 +49,7 @@ const Agenda = () => {
     })
   },[]);
 
+  console.log(eventsThisYear);
   return (
     <div>
       <Navbar />
@@ -59,13 +64,18 @@ const Agenda = () => {
 
         <div className='future-events'>
           <ul className='no-list-style'>
-            {events.map(event => (
-              new Date(event.dates[0].startDate).getFullYear() === thisYear && event.title !== "Test" ?(
-                <li key={event._id} className="event" >
-                  <Event event={event} thisYear={thisYear} />
+            {eventsThisYear.map((month, i) => (
+                <li key={i} className="event" >
+                  {month.length ? 
+                    <div className='month'>
+                      <h2 className='event-month'>{months[i]} {thisYear} </h2>
+                      {month.map(show => (
+                        <Event key={show._id} event={show} index={i} />
+                      ))}
+                    </div>
+                    : <></>
+                  }
                 </li>
-              ):( 
-              <></>)
             ))}
           </ul>
 
