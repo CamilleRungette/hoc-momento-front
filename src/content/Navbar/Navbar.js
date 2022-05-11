@@ -20,8 +20,8 @@ const Navbar = () => {
     .then(res => {
       let content = <ul className='no-list-style menu-list popover-list navbar-list'>
       {res.data.map(show => (
-        <li key={show._id} onClick={size > 1000 ? hidePopoverShows : closeMenu} className='pointer'><Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
-      ))}
+          show.title !== "Test" ? <li onClick={size[0] > 1000 ? hidePopoverShows : closeMenu} key={show._id} className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li> : <></>
+        ))}
       </ul>
       setShowsContent(content);
     })
@@ -33,7 +33,7 @@ const Navbar = () => {
     .then(res => {
       let content = <ul className='no-list-style menu-list popover-list navbar-list'>
       {res.data.map(action => (
-        <li key={action._id} className='pointer' onClick={size > 1000 ? hidePopoverActions : closeMenu}><Link to={`/action-culturelle/${action._id}`}>{action.place}</Link></li>
+        action.place !== "Test" ? <li onClick={size[0] > 1000 ? hidePopoverActions : closeMenu} key={action._id} className='pointer'><Link to={`/action-culturelle/${action._id}`}> {action.place} </Link></li> : <></>
       ))}
       </ul>
       setActionsContent(content)
