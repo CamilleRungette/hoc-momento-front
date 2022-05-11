@@ -34,3 +34,6 @@
 .link {
   text-decoration: none;
   color: inherit !important; }
+
+.loading-content {
+  text-align: center; }

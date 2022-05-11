@@ -36,6 +36,9 @@
   text-decoration: none;
   color: inherit !important; }
 
+.loading-content {
+  text-align: center; }
+
 .primary-button {
   background-color: #3e79bc;
   border: none;
@@ -181,7 +184,7 @@
   .menu-list .MuiPaper-root::before {
     display: none !important; }
   .menu-list .MuiAccordionSummary-root {
-    min-height: 20px !important; }
+    min-height: 20px; }
   .menu-list #panel1a-header {
     height: 28px !important; }
   .menu-list #company {
@@ -1019,6 +1022,9 @@
           width: 30%;
           min-width: 200px;
           margin: 5px 0; }
+
+.agenda-loading {
+  width: 400px; }
 
 body {
   margin: 0 !important;
