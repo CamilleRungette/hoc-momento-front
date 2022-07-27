@@ -1,37 +1,47 @@
 import React, {useRef} from 'react';
 import { BasicModal } from './_index';
 
-const Event = ({event, date}) => {
+const Event = ({event, index}) => {
 
   const modalRef = useRef();
-  const year = 2021;
   const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
   const showModal = () => {
     modalRef.current.showModal();
   };
 
+
   return (
-    <div className='event-div'>
-      <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>
-      <h2 className='event-month'>{months[new Date(event.show[0].startDate).getMonth() +1]} {year} </h2>
-      <p>
-        {new Date(event.show[0].startDate).getDate() === new Date(event.show[0].endDate).getDate() ?
-          <span>Le {new Date(event.show[0].startDate).getDate()} {months[new Date(event.show[0].startDate).getMonth() +1]} </span>
-        : 
-        <span>
-          Du {new Date(event.show[0].startDate).getDate()} 
-            {new Date(event.show[0].startDate).getMonth() !== new Date(event.show[0].endDate).getMonth() ? (
-            <span> {months[new Date(event.show[0].startDate).getMonth() +1]} </span>
-            ):( <> </>)}
-          au {new Date(event.show[0].endDate).getDate()} {months[new Date(event.show[0].endDate).getMonth() +1]}
-        </span>}
-      </p>
+    <div className='event-div' key={Math.floor(Math.random() * 10000)}>    
+      {event.dates.map(date => (
+        new Date(date.startDate).getMonth() === index ? 
+        <p className='event-item' key={Math.floor(Math.random() * 10000)}>
+         { event.description && <button className='primary-button-outline see-more' onClick={showModal}> Voir </button>}
+          {new Date(date.startDate).getDate() === new Date(date.endDate).getDate() ?
+            <span>Le {new Date(date.startDate).getDate()} {months[new Date(date.startDate).getMonth()]} </span>
+          : 
+          <span>
+            Du {new Date(date.startDate).getDate()} 
+              {new Date(date.startDate).getMonth() !== new Date(date.endDate).getMonth() ? (
+              <span> {months[new Date(date.startDate).getMonth()]} </span>
+              ):( <> </>)}
+            au {new Date(date.endDate).getDate()} {months[new Date(date.endDate).getMonth()]}
+          </span> }
+          {new Date(date.startDate).getHours()-2 === new Date(date.endDate).getHours()-2 ? (
+            <span> à {new Date(date.startDate).getHours()-2}h </span>
+          ) : (
+            <span> de {new Date(date.startDate).getHours()-2} h à {new Date(date.endDate).getHours()-2}h </span>
+          )}
+          <br/>
+          <span className='event-name'>{event.title}</span> 
+          <br/>
 
-      <h2 className='event-name'>{event.title}</h2> 
+          {date.place && <span>{date.place} </span> }
+          <span>{date.address ? <span>{date.address},</span> : <></>} {date.city ? date.city : <></>}</span>
+        </p>
+        : <></>
+      ))}
 
-      {event.place ? <p>{event.show[0].place} </p> :  <></>}
-      <p>{event.show[0].address ? <span>{event.show[0].address},</span> : <></>} {event.show[0].city ? event.show[0].city : <></>}</p>
       <BasicModal ref={modalRef} content={
         <div className='event-description'>
           <div className='picture'>

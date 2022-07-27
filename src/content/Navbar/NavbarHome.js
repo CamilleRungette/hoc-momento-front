@@ -24,7 +24,7 @@ const NavbarHome = () => {
       let content = 
       <ul className='no-list-style menu-list popover-list navbar-list'>
         {res.data.map(show => (
-          <li onClick={size[0] > 1000 ? hidePopoverShows : closeMenu} key={show._id} className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li>
+          show.title !== "Test" ? <li onClick={size[0] > 1000 ? hidePopoverShows : closeMenu} key={show._id} className='pointer'> <Link to={`/spectacle/${show._id}`}>{show.title}</Link> </li> : <></>
         ))}
       </ul>
       setShowsContent(content);
@@ -37,12 +37,13 @@ const NavbarHome = () => {
     .then(res => {
       let content = <ul className='no-list-style menu-list popover-list'>
       {res.data.map(action => (
-        <li onClick={size[0] > 1000 ? hidePopoverActions : closeMenu} key={action._id} className='pointer'><Link to={`/action-culturelle/${action._id}`}> {action.place} </Link></li>
+        action.place !== "Test" ? <li onClick={size[0] > 1000 ? hidePopoverActions : closeMenu} key={action._id} className='pointer'><Link to={`/action-culturelle/${action._id}`}> {action.place} </Link></li> : <></>
       ))}
       </ul>
       setActionsContent(content)
     });
-  },[]);
+  },[]); 
+
 
   useLayoutEffect(() => {
     function updateSize() {
@@ -54,7 +55,7 @@ const NavbarHome = () => {
   }, []);
 
   const changeBackground = () => {
-    if (window.scrollY > size[1]){
+    if (window.scrollY > 900){
       setNavbarStyle(true);
     } else {
       setNavbarStyle(false);
@@ -64,6 +65,9 @@ const NavbarHome = () => {
   const showPopoverShows = () => {
     let pop = document.getElementById('popover-shows');
     pop.style.display = "block";
+    
+    let otherPop = document.getElementById('popover-actions');
+    if (otherPop.style.display === "block") hidePopoverActions();
   };
 
   const hidePopoverShows = () => {
@@ -74,6 +78,9 @@ const NavbarHome = () => {
   const showPopoverActions = (type) => {
     let pop = document.getElementById('popover-actions');
     pop.style.display = "block";
+    
+    let otherPop = document.getElementById('popover-actions');
+    if (otherPop.style.display === "block") hidePopoverShows();
   };
 
   const hidePopoverActions = () => {
@@ -91,8 +98,13 @@ const NavbarHome = () => {
     pop.style.display = "none";
   };
 
+  const closeAll = () => {
+    hidePopoverActions();
+    hidePopoverShows();
+  };
+
   return (
-    <div className={navbarStyle ? "navbar navbar-main" : "navbar navbar-home"}>
+    <div className={navbarStyle ? "navbar navbar-main" : "navbar navbar-home"} onMouseLeave={closeAll}>
       <div className='logo-div'>
         <Link className='link' to="/"><img className='logo pointer' alt="Hoc Momento" 
         src={navbarStyle ? "/images/logo_noir.png" : "/images/logo_blanc.png" }
@@ -101,13 +113,13 @@ const NavbarHome = () => {
       {size[0] > 1000 ? 
       <ul className='navbar-list no-list-style flex-space-between'>
         <li className='pointer home-bold'><Link className='link' to="/compagnie">Compagnie </Link></li> 
-        <li className='pointer home-bold popover-div' onMouseEnter={showPopoverShows} onMouseLeave={hidePopoverShows}>Spectacles
-          <div id="popover-shows" className='popover' >
+        <li className='pointer home-bold popover-div' onMouseEnter={showPopoverShows} >Spectacles
+          <div id="popover-shows" className='popover' onMouseLeave={hidePopoverShows} >
             {showsContent}
           </div>
         </li>
-        <li className='pointer home-bold popover-div' onMouseEnter={showPopoverActions}  onMouseLeave={hidePopoverActions}>Actions Culturelles
-        <div id="popover-actions" className='popover'>
+        <li className='pointer home-bold popover-div' onMouseEnter={showPopoverActions} >Actions Culturelles
+        <div id="popover-actions" className='popover' onMouseLeave={hidePopoverActions}>
             {actionsContent}
           </div>
         </li>
